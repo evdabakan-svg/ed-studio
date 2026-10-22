@@ -37,8 +37,9 @@
   .filter{min-width:0;padding:7px 8px}
   .search{width:100%;min-width:0}
   #catalog-content,.latest-releases,.catalog-grid,.other-songs,.other-songs-grid{min-width:0;max-width:100%}
-  .catalog-grid{display:grid;grid-template-columns:minmax(0,1fr);overflow:visible}
-  .catalog-grid .song{width:100%;min-width:0;max-width:100%}
+  .catalog-grid{display:flex;grid-template-columns:none;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+  .catalog-grid::-webkit-scrollbar{display:none}
+  .catalog-grid .song{flex:0 0 86%;scroll-snap-align:start;width:auto;min-width:0;max-width:100%}
   .song{min-width:0;max-width:100%;padding:12px}
   .song-cover{width:100%;max-width:100%}
   .song h3,.song p,.song-small h3,.song-small p{min-width:0;overflow-wrap:anywhere}
