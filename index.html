@@ -78,6 +78,21 @@
 @media(max-width:760px){
   .hero-foot,.ticker{display:none!important}
 }
+
+/* Компактные кнопки каталога: на месте прежней кнопки «Слушать» */
+.song-list-actions{grid-column:2;display:flex;align-items:center;gap:5px;flex-wrap:nowrap;min-width:0}
+.song-list-link,.song-list-actions button{width:auto;min-width:0;flex:1 1 0;height:32px;padding:0 7px;font-size:10px;white-space:nowrap}
+@media(max-width:760px){
+  .song-list-row{grid-template-columns:50px minmax(0,1fr);gap:8px 9px}
+  .song-list-thumb{width:50px;height:50px}
+  .song-list-actions{grid-column:2;grid-row:auto;display:flex;flex-wrap:nowrap;gap:3px;width:100%;min-width:0;margin-top:3px}
+  .song-list-link,.song-list-actions button{flex:1 1 0;width:auto;min-width:0;max-width:none;height:29px;padding:0 3px;font-size:8.5px;letter-spacing:-.15px}
+  .song-list-link{grid-column:auto;grid-row:auto;justify-self:stretch}
+  .song-list-materials{display:none}
+}
+@media(max-width:360px){
+  .song-list-link,.song-list-actions button{font-size:8px;padding:0 2px}
+}
 </style>
 </head>
 <body>
