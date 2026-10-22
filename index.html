@@ -151,16 +151,16 @@ function renderCatalog(){
   thumb.className='song-list-thumb';
   if(coverNode)thumb.style.backgroundImage=getComputedStyle(coverNode).backgroundImage;
   const info=document.createElement('div');
-  const titleNode=document.createElement('div');
   const numberNode=document.createElement('div');
   numberNode.className='song-list-number';
   numberNode.textContent=String(19-itemIndex);
+  const titleNode=document.createElement('div');
   titleNode.className='song-list-title';
   titleNode.textContent=title;
   const artistNode=document.createElement('div');
   artistNode.className='song-list-artist';
   artistNode.textContent=artist;
-  info.append(numberNode,titleNode,artistNode);
+  info.append(titleNode,artistNode);
   const actions=document.createElement('div');
   actions.className='song-list-actions';
   const listen=document.createElement('a');
@@ -177,7 +177,10 @@ function renderCatalog(){
    button.textContent=label;
    actions.appendChild(button);
   });
-  row.append(thumb,info,actions);
+  const coverWrap=document.createElement('div');
+  coverWrap.className='song-list-cover-wrap';
+  coverWrap.append(thumb,numberNode);
+  row.append(coverWrap,info,actions);
   list.appendChild(row);
  });
  const empty=content.querySelector('.catalog-empty');
@@ -196,3 +199,9 @@ renderCatalog();
 </body>
 </html>
 <style id="all-songs-numbering-fix">.song-list-number{display:block!important;visibility:visible!important;opacity:1!important;color:#315c49;font:700 12px/1.2 Arial,sans-serif;margin:0 0 4px;text-align:left}</style>
+
+<style id="all-songs-cover-numbering">
+.song-list-cover-wrap{grid-column:1;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:stretch;align-self:start;min-width:0}
+.song-list-cover-wrap .song-list-thumb{display:block;width:100%;aspect-ratio:1/1;height:auto;flex:none}
+.song-list-number{display:block!important;visibility:visible!important;opacity:1!important;color:#315c49;font:700 12px/1.2 Arial,sans-serif;margin:5px 0 0;text-align:center;min-height:15px}
+</style>
