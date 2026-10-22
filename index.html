@@ -160,6 +160,7 @@ function renderCatalog(){
   const artistNode=document.createElement('div');
   artistNode.className='song-list-artist';
   artistNode.textContent=artist;
+  info.className='song-list-info';
   info.append(titleNode,artistNode);
   const actions=document.createElement('div');
   actions.className='song-list-actions';
@@ -204,4 +205,16 @@ renderCatalog();
 .song-list-cover-wrap{grid-column:1;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:stretch;align-self:start;min-width:0}
 .song-list-cover-wrap .song-list-thumb{display:block;width:100%;aspect-ratio:1/1;height:auto;flex:none}
 .song-list-number{display:block!important;visibility:visible!important;opacity:1!important;color:#315c49;font:700 12px/1.2 Arial,sans-serif;margin:5px 0 0;text-align:center;min-height:15px}
+</style>
+
+<style id="all-songs-desktop-layout">
+@media(min-width:761px){
+ .song-list-row{grid-template-columns:76px minmax(180px,1fr) 252px;align-items:center;gap:8px 16px}
+ .song-list-cover-wrap{grid-column:1;grid-row:1 / span 2;width:76px}
+ .song-list-cover-wrap .song-list-thumb{width:76px;height:76px;aspect-ratio:1/1}
+ .song-list-number{font-size:11px;margin-top:4px}
+ .song-list-row>.song-list-info{grid-column:2;grid-row:1}
+ .song-list-actions{grid-column:3;grid-row:1 / span 2;display:flex;align-items:center;justify-content:flex-end;gap:5px;flex-wrap:nowrap;width:252px;margin:0}
+ .song-list-link,.song-list-actions button{width:80px;min-width:0;flex:1 1 0;height:32px;padding:0 5px;font-size:10px;white-space:nowrap}
+}
 </style>
