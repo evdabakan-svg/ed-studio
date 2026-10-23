@@ -19,14 +19,13 @@
 <a class="back" href="index.html#catalog">← <span>Вернуться в каталог</span></a>
 <section class="song-hero">
 <div class="cover-frame"><img class="cover" id="cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/33/50/65/3350658b-17cf-c5fe-bfa2-2b6ae8395ca9/cover.jpg/1200x1200bb.webp" alt="Обложка песни"></div>
-<div class="song-info"><div class="eyebrow">Музыкальная студия ED studio</div><h1 class="song-title" id="title">Название песни</h1><p class="artist" id="artist">Исполнитель</p><p class="intro" id="description">Слушайте песню на любимой площадке, а также приобретайте фонограмму и пользуйтесь текстом песни.</p><div class="primary-actions"><a class="btn primary" id="buy-track" href="#materials">Купить фонограмму ↗</a><a class="btn" href="#lyrics">Текст песни ↓</a></div></div>
+<div class="song-info"><div class="eyebrow">Музыкальная студия ED studio</div><h1 class="song-title" id="title">Название песни</h1><p class="artist" id="artist">Исполнитель</p><p class="intro" id="description">Краткое описание песни.</p><div class="primary-actions"><a class="btn primary" id="buy-track" href="#materials">Фонограмма ↗</a></div></div>
 </section>
+<section class="section" id="lyrics"><div class="section-head"><h2>Текст песни</h2><span class="section-note" id="lyrics-meta">Полный текст</span></div><div class="lyrics" id="lyrics-text">Текст песни будет добавлен.</div></section>
 <section class="section" id="materials"><div class="section-head"><h2>Материалы песни</h2><span class="section-note">Для личного и творческого использования</span></div><div class="materials">
 <article class="material"><span class="material-label">Аудио</span><h3>Фонограмма</h3><p id="track-note">Качественная фонограмма для исполнения песни.</p><a class="btn primary" id="track-link" href="mailto:edvabakan@gmail.com?subject=Фонограмма%20песни">Купить фонограмму</a></article>
-<article class="material"><span class="material-label">Текст</span><h3>Текст песни</h3><p>Слова песни для чтения и исполнения.</p><a class="btn" href="#lyrics">Читать текст ↓</a></article>
 <article class="material" id="sheet-card"><span class="material-label">Ноты</span><h3>Ноты песни</h3><p id="sheet-note">Если ноты подготовлены, здесь будет доступно скачивание файла.</p><a class="btn" id="sheet-link" href="#" target="_blank" rel="noopener">Скачать ноты ↓</a></article>
 </div></section>
-<section class="section" id="lyrics"><div class="section-head"><h2>Текст песни</h2><span class="section-note" id="lyrics-meta">Полный текст</span></div><div class="lyrics" id="lyrics-text">Текст песни будет добавлен.</div></section>
 <section class="section" id="releases"><div class="section-head"><h2>Слушать песню</h2><span class="section-note">Выберите удобную площадку</span></div><div class="platforms"><a class="platform" id="spotify" href="#" target="_blank" rel="noopener">Spotify ↗</a><a class="platform" id="apple" href="#" target="_blank" rel="noopener">Apple Music ↗</a><a class="platform" id="yandex" href="#" target="_blank" rel="noopener">Яндекс Музыка ↗</a><a class="platform" id="vk" href="#" target="_blank" rel="noopener">VK Музыка ↗</a><button class="platform" id="other-toggle" type="button">Другие площадки +</button></div><div class="other-list" id="other-list"></div></section>
 </main>
 <footer><div class="wrap footer-inner"><span>ED studio · Музыкальная студия Евгения Дмитриева</span><a href="index.html">На главную ↗</a></div></footer>
@@ -38,11 +37,11 @@ const setText=(id,value)=>{if(value)document.getElementById(id).textContent=valu
 const setLink=(id,url)=>{const el=document.getElementById(id);if(url){el.href=url}else{el.classList.add('hidden')}};
 setText('title',get('title','Название песни'));
 setText('artist',get('artist','Исполнитель'));
-setText('description',get('description','Слушайте песню на любимой площадке, а также приобретайте фонограмму и пользуйтесь текстом песни.'));
+setText('description',get('description','Краткое описание песни.'));
 if(get('cover'))document.getElementById('cover').src=get('cover');
 if(get('lyrics'))document.getElementById('lyrics-text').textContent=get('lyrics');
 else document.getElementById('lyrics-text').textContent='Текст этой песни пока не добавлен.';
-setLink('buy-track',get('buy'));
+setLink('buy-track',get('buy','#materials'));
 setLink('track-link',get('buy'));
 setLink('sheet-link',get('sheet'));
 if(!get('sheet')){document.getElementById('sheet-link').classList.add('hidden');document.getElementById('sheet-note').textContent='Ноты для этой песни пока не добавлены.'}
