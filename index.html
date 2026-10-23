@@ -197,6 +197,12 @@ function renderCatalog(){
 filters.forEach(button=>button.addEventListener('click',()=>{active=button.dataset.filter;filters.forEach(b=>b.classList.toggle('active',b===button));renderCatalog()}));search.addEventListener('input',renderCatalog);document.getElementById('song-list-items').addEventListener('click',event=>{const button=event.target.closest('[data-material]');if(button)notify('Материал «'+button.dataset.material+'» пока не добавлен. Добавим файл или ссылку — и кнопка заработает.')});document.querySelectorAll('[data-material]').forEach(button=>button.addEventListener('click',()=>notify('Материал «'+button.dataset.material+'» пока не добавлен. Добавим файл или ссылку — и кнопка заработает.')));
 renderCatalog();
 </script>
+<style id="mama-card-bottom-spacing">
+.latest-releases .catalog-grid>.song[data-name="мама ангелина фомина"]{display:flex;flex-direction:column}
+.latest-releases .catalog-grid>.song[data-name="мама ангелина фомина"] h3{margin-bottom:0}
+.latest-releases .catalog-grid>.song[data-name="мама ангелина фомина"] p{margin-top:6px;margin-bottom:0}
+.latest-releases .catalog-grid>.song[data-name="мама ангелина фомина"] .song-actions{margin-top:auto!important;padding-top:16px}
+</style>
 </body>
 </html>
 <style id="all-songs-numbering-fix">.song-list-number{display:block!important;visibility:visible!important;opacity:1!important;color:#274B3A;font:700 12px/1.2 Arial,sans-serif;margin:0 0 4px;text-align:left}</style>
