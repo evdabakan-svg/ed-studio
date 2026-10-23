@@ -44,7 +44,7 @@ const defaultLyrics = "1 куплет:\nМама — это слово нежн�
 const lyricsText = get('lyrics',defaultLyrics);
 const lyricsEl = document.getElementById('lyrics-text');
 lyricsEl.replaceChildren();
-lyricsText.split(/\n/).forEach(line=>{const p=document.createElement('span');if(/^(1 куплет|2 куплет|Припев):?$/.test(line.trim())){p.className='part-label';p.dataset.kind=line.trim().startsWith('Припев')?'chorus':'verse';p.textContent=line.replace(/:$/,'')}else{p.className='lyric-line';p.textContent=line||' '}lyricsEl.appendChild(p)});
+lyricsText.split(/\n/).forEach(line=>{const p=document.createElement('span');if(/^(1 куплет|2 куплет|Припев):?$/.test(line.trim())){p.className='part-label';p.dataset.kind=line.trim().startsWith('Припев')?'chorus':'verse';p.textContent=line.replace(/:$/,'')}else if(line.trim()===''){p.className='stanza-gap'}else{p.className='lyric-line';p.textContent=line}lyricsEl.appendChild(p)});
 document.getElementById('copy-lyrics').addEventListener('click',async()=>{const button=document.getElementById('copy-lyrics');try{await navigator.clipboard.writeText(lyricsText);button.textContent='Скопировано ✓';setTimeout(()=>button.textContent='Копировать текст',1800)}catch(e){const area=document.createElement('textarea');area.value=lyricsText;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();try{document.execCommand('copy');button.textContent='Скопировано ✓'}catch(err){button.textContent='Выделите текст вручную'}area.remove();setTimeout(()=>button.textContent='Копировать текст',1800)}});
 setLink('buy-track',get('buy','#materials'));
 setLink('track-link',get('buy','mailto:edvabakan@gmail.com?subject=Фонограмма%20песни%20Мама'));
