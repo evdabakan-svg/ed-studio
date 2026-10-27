@@ -144,7 +144,7 @@ function notify(message){toast.textContent=message;toast.classList.add('show');c
 })();
 function renderCatalog(){
  const query=search.value.trim().toLocaleLowerCase('ru');
- const items=[...document.querySelectorAll('#song-data .song')];
+ const items=[...document.querySelectorAll('#song-data .song')].reverse();
  const list=document.getElementById('song-list-items');
  let visible=0;
  list.innerHTML='';
