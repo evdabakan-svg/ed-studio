@@ -233,7 +233,7 @@ renderCatalog();
     <div class="footer-main">
       <a class="footer-brand" href="#top">ED<span>studio</span></a>
       <p class="footer-tagline">Христианское творчество<br>в песнях и музыке</p>
-      <a class="footer-contact" href="mailto:evdabakan@gmail.com">Связаться со студией <span>↗</span></a>
+      <a class="footer-contact" href="mailto:evdabakan@gmail.com">Связаться со студией <svg class="footer-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
     <div class="footer-nav-wrap">
       
@@ -257,8 +257,8 @@ renderCatalog();
 .footer-brand span{display:inline-block;margin-left:1px;color:#426749;font-weight:500;font-style:normal;letter-spacing:-.07em}
 .footer-tagline{margin:22px 0 0;color:#d1d9ce;font:italic 16px/1.5 var(--serif,Georgia,serif)}
 .footer-contact{grid-column:2;grid-row:1 / span 2;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0;border-top:1px solid rgba(245,243,233,.4);border-bottom:1px solid rgba(245,243,233,.4);color:#f5f3e9;text-decoration:none;font-size:12px;letter-spacing:.02em}
-.footer-contact span{font-size:24px;line-height:1;color:#a9c69a;transition:transform .2s}
-.footer-contact:hover span{transform:translate(4px,-4px)}
+.footer-contact .footer-arrow{display:block;flex:0 0 22px;width:22px;height:22px;color:#a9c69a;transition:transform .2s}
+.footer-contact:hover .footer-arrow{transform:translate(3px,-3px)}
 .footer-nav-wrap{display:flex;align-items:center;flex-wrap:wrap;gap:14px 30px;padding:19px 0 22px;border-top:1px solid rgba(245,243,233,.2)}
 .footer-nav-wrap a{color:#f5f3e9;text-decoration:none;font-size:11px;opacity:.82;transition:opacity .2s,color .2s}
 .footer-nav-wrap a:hover{opacity:1;color:#a9c69a}
