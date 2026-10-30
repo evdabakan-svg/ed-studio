@@ -10,11 +10,11 @@
     },
     {
       "source": "/mama",
-      "destination": "/song.html?title=Мама&artist=Ангелина%20Фомина&sheet=notes%2Fmama.pdf"
+      "destination": "/song.html?data=%2Fsongs%2Fmama.json"
     },
     {
       "source": "/mama/",
-      "destination": "/song.html?title=Мама&artist=Ангелина%20Фомина&sheet=notes%2Fmama.pdf"
+      "destination": "/song.html?data=%2Fsongs%2Fmama.json"
     }
   ],
   "redirects": [
