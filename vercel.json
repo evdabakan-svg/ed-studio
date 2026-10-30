@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/mama",
+      "destination": "/song.html?title=Мама&artist=Ангелина%20Фомина&sheet=notes%2Fmama.pdf"
+    },
+    {
+      "source": "/mama/",
+      "destination": "/song.html?title=Мама&artist=Ангелина%20Фомина&sheet=notes%2Fmama.pdf"
+    }
+  ]
+}
