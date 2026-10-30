@@ -82,7 +82,7 @@ const box=document.getElementById('lyrics-text');box.replaceChildren();
 lyrics.split('\n').forEach(line=>{const e=document.createElement('span');if(/^(Куплет 1|Куплет 2|1 куплет|2 куплет|Припев):?$/.test(line.trim())){e.className='part-label';e.textContent=line.replace(/:$/,'')}else if(!line.trim())e.className='stanza-gap';else{e.className='lyric-line';e.textContent=line}box.appendChild(e)});
 const audio=document.getElementById('song-audio'),player=document.querySelector('.audio-player'),audioUrl=val('audio');
 if(audioUrl){audio.querySelector('source').src=audioUrl;audio.load()}else player.classList.add('hidden');
-const buy=val('buy');link('buy-track',buy||'#materials');link('track-link',buy);
+const buy=val('buy');document.getElementById('buy-track').href='#materials';link('track-link',buy);
 const sheet=val('sheet');link('sheet-open-link',sheet);link('sheet-link',sheet);link('top-sheet-link',sheet);
 text('sheet-note',sheet?'':'Ноты для этой песни пока не добавлены.');
 if(sheet)document.getElementById('sheet-link').download=title+' — ноты.pdf';
