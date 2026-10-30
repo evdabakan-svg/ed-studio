@@ -104,7 +104,7 @@ if(sheetUrl){
   [sheetOpen,sheetDownload].forEach(el=>{el.href=sheetUrl;el.classList.remove('hidden');el.style.display='flex';});
   const fileName=(get('title','Ноты')+' — ноты.pdf').replace(/[\\/:*?"<>|]/g,'-');
   sheetDownload.setAttribute('download',fileName);
-  document.getElementById('sheet-note').textContent='PDF-файл с нотами песни.';
+  document.getElementById('sheet-note').textContent='';
 }else{
   sheetOpen.classList.add('hidden');sheetDownload.classList.add('hidden');
   document.getElementById('sheet-note').textContent='Ноты для этой песни пока не добавлены.';
