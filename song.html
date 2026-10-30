@@ -58,7 +58,7 @@
 <a class="platform platform-apple" id="apple" href="#" target="_blank" rel="noopener" aria-label="Слушать в Apple Music"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M21.7 17.1c0-3 2.4-4.5 2.5-4.6-1.4-2-3.6-2.3-4.4-2.3-1.9-.2-3.7 1.1-4.7 1.1s-2.5-1.1-4.1-1.1c-2.1 0-4 1.2-5.1 3.1-2.2 3.8-.6 9.4 1.5 12.5 1 1.5 2.2 3.2 3.8 3.1 1.5-.1 2.1-1 4-1s2.4 1 4.1 1c1.7 0 2.7-1.5 3.7-3.1 1.2-1.7 1.6-3.4 1.6-3.5-.1 0-2.9-1.1-2.9-5.2ZM18.6 8.2c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.9-3.6 1.9-.8.9-1.5 2.3-1.3 3.7 1.4.1 2.8-.7 3.7-1.8Z" transform="translate(1 -1) scale(.9)"/></svg><span>Apple Music</span></a>
 <a class="platform platform-yandex" id="yandex" href="#" target="_blank" rel="noopener" aria-label="Слушать в Яндекс Музыке"><img src="https://logo-teka.com/wp-content/uploads/2025/07/yandex-music-sign-logo.svg" alt="" aria-hidden="true"><span>Яндекс Музыка</span></a>
 <a class="platform platform-vk" id="vk" href="#" target="_blank" rel="noopener" aria-label="Слушать в VK Музыке"><img src="https://logo-teka.com/wp-content/uploads/2025/08/vk-music-sign-logo.svg" alt="" aria-hidden="true"><span>VK Музыка</span></a>
-<button class="platform" id="other-toggle" type="button">Другие площадки +</button></div><div class="other-list" id="other-list"></div></section>
+<a class="platform" id="other-toggle" href="https://links.edstudio.site/mama" target="_blank" rel="noopener">Другие площадки</a></div><div class="other-list" id="other-list"></div></section>
 </main>
 <footer><div class="wrap footer-inner"><span>ED studio · Музыкальная студия Евгения Дмитриева</span><a class="footer-home" href="/">На главную <svg class="footer-home-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5"/></svg></a></div></footer>
 <script>
@@ -125,7 +125,7 @@ if(sheetUrl){
 [['spotify','spotify'],['apple','apple'],['yandex','yandex'],['vk','vk']].forEach(([id,key])=>setLink(id,get(key,key==='spotify'?'https://open.spotify.com/track/2VoiR2v32SlOl3fdaj6C9O?si=5e6deb24698e49de':key==='apple'?'https://music.apple.com/us/song/%D0%BC%D0%B0%D0%BC%D0%B0/1776591623':key==='yandex'?'https://music.yandex.ru/album/33832789?utm_source=web&utm_medium=copy_link':key==='vk'?'https://vk.ru/audio-2001910905_131910905_5cfafda4ebf44577d3':'')));
 const other=get('other');
 if(other){other.split('|').filter(Boolean).forEach(entry=>{const split=entry.split('::');if(split.length<2)return;const a=document.createElement('a');a.href=split.slice(1).join('::');a.target='_blank';a.rel='noopener';a.textContent=split[0]+' ↗';document.getElementById('other-list').appendChild(a)})}
-document.getElementById('other-toggle').addEventListener('click',()=>{const list=document.getElementById('other-list');list.classList.toggle('open');document.getElementById('other-toggle').textContent=list.classList.contains('open')?'Другие площадки −':'Другие площадки +'});
+
 </script>
 </body>
 </html>
