@@ -66,6 +66,18 @@ const get=(key,fallback='')=>params.get(key)||fallback;
 const setText=(id,value)=>{if(value)document.getElementById(id).textContent=value};
 const setLink=(id,url)=>{const el=document.getElementById(id);if(url){el.href=url}else{el.classList.add('hidden')}};
 const songAudio=document.getElementById('song-audio');const audioPlay=document.getElementById('audio-play');const audioPlayIcon=document.getElementById('audio-play-icon');const audioProgress=document.getElementById('audio-progress');const audioTime=document.getElementById('audio-time');const fmtTime=value=>{if(!Number.isFinite(value))return'0:00';const m=Math.floor(value/60),s=Math.floor(value%60);return m+':'+String(s).padStart(2,'0')};const paintAudio=()=>{const duration=songAudio.duration||0;audioProgress.value=duration?Math.round(songAudio.currentTime/duration*1000):0;audioTime.textContent=fmtTime(songAudio.currentTime)+' / '+fmtTime(duration);const playing=!songAudio.paused;audioPlay.setAttribute('aria-label',playing?'Пауза':'Воспроизвести');audioPlayIcon.innerHTML=playing?'<path d="M7 5h4v14H7zM15 5h4v14h-4z"/>':'<path d="M8 5v14l11-7z"/>'};audioPlay.addEventListener('click',()=>{if(songAudio.paused)songAudio.play().catch(()=>{});else songAudio.pause()});songAudio.addEventListener('loadedmetadata',paintAudio);songAudio.addEventListener('timeupdate',paintAudio);songAudio.addEventListener('play',paintAudio);songAudio.addEventListener('pause',paintAudio);songAudio.addEventListener('ended',paintAudio);audioProgress.addEventListener('input',()=>{if(songAudio.duration) songAudio.currentTime=Number(audioProgress.value)/1000*songAudio.duration});paintAudio();
+const audioPlayer=document.querySelector('.audio-player');
+const audioHome=document.createComment('Место плеера в мобильной версии');
+audioPlayer.parentNode.insertBefore(audioHome,audioPlayer);
+const placeAudioPlayer=()=>{
+  if(window.matchMedia('(min-width: 701px)').matches){
+    document.getElementById('description').after(audioPlayer);
+  }else{
+    audioHome.parentNode.insertBefore(audioPlayer,audioHome.nextSibling);
+  }
+};
+placeAudioPlayer();
+window.addEventListener('resize',placeAudioPlayer);
 setText('title',get('title','Мама'));
 document.getElementById('audio-caption').textContent=get('title','Мама');
 document.getElementById('track-heading').textContent='Фонограмма «'+get('title','Мама')+'»';
