@@ -43,7 +43,7 @@
 <a class="back" href="/#catalog">← <span>Вернуться в каталог</span></a>
 <section class="song-hero">
 <div class="cover-frame"><img class="cover" id="cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cc/eb/9e/cceb9e0f-27f5-6a40-fcde-56845e2f6549/7300342670842.jpg/1200x1200bb.webp" alt="Обложка песни"></div>
-<div class="song-info"><div class="eyebrow">Музыкальная студия ED studio</div><h1 class="song-title" id="title">Мама</h1><p class="artist" id="artist">Ангелина Фомина</p><p class="intro" id="description">Трогательная песня о маме в красивом исполнении Ангелины Фоминой.</p><div class="primary-actions">
+<div class="song-info"><div class="eyebrow">Музыкальная студия ED studio</div><h1 class="song-title" id="title">Как прекрасен мир</h1><p class="artist" id="artist">Эльза Дмитриева и Эмина Хигет</p><p class="intro" id="description">Трогательная песня о маме в красивом исполнении Ангелины Фоминой.</p><div class="primary-actions">
 <a class="btn" id="buy-track" href="#materials">Фонограмма <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v12M5 10l5 5 5-5M4 17h12"/></svg></a>
 <a class="btn" id="top-sheet-link" href="#materials">Ноты <svg class="button-icon note-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M8 14V4l9-2v10"/><ellipse cx="5.5" cy="14.5" rx="3" ry="2.2" transform="rotate(-18 5.5 14.5)"/><ellipse cx="14.5" cy="12.5" rx="3" ry="2.2" transform="rotate(-18 14.5 12.5)"/></svg></a>
 </div></div>
@@ -103,8 +103,8 @@ setText('title',get('title','Мама'));
 document.getElementById('audio-caption').textContent=get('title','Мама');
 document.getElementById('track-heading').textContent='Фонограмма «'+get('title','Мама')+'»';
 setText('lyrics-print-title',get('title','Мама'));
-document.title=get('title','Мама')+' — '+get('artist','Эльза Дмитриева & Эмина Хигет')+' | ED studio';
-setText('artist',get('artist','Ангелина Фомина'));
+document.title=get('title','Мама')+' — '+get('artist','Эльза Дмитриева и Эмина Хигет')+' | ED studio';
+setText('artist',get('artist','Эльза Дмитриева и Эмина Хигет'));
 setText('description',get('description','Песня «Как прекрасен мир» в исполнении Эльзы Дмитриевой и Эмины Хигет.'));
 document.getElementById('cover').src=get('cover','https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cc/eb/9e/cceb9e0f-27f5-6a40-fcde-56845e2f6549/7300342670842.jpg/1200x1200bb.webp');
 const defaultLyrics = "Куплет 1:\nКак прекрасен мир! Столько красоты:\nНебо, солнышко, на полях цветы…\nИ ручьи весенние, и снежок зимой –\nЯ восхищаюсь, и ты давай со мной\n\nПрипев:\nБогу спасибо мы радостно поём,\nЗнаем Его любовь и за Ним идём.\nЕсли на сердце грусть или одинок –\nПомни всегда, везде: любит тебя Бог\n\nКуплет 2:\nМы счастливые, жить нам хорошо.\nИ на сердце так радостно, легко.\nВедь всё было создано Богом для людей,\nКаждого любит Он: взрослых и детей.";
