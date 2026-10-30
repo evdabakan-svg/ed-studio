@@ -72,6 +72,7 @@ audioPlayer.parentNode.insertBefore(audioHome,audioPlayer);
 const placeAudioPlayer=()=>{
   if(window.matchMedia('(min-width: 701px)').matches){
     document.getElementById('description').after(audioPlayer);
+    audioPlayer.style.marginBottom='18px';
   }else{
     audioHome.parentNode.insertBefore(audioPlayer,audioHome.nextSibling);
   }
