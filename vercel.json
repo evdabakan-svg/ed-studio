@@ -1,11 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/song.html",
-      "destination": "/mama",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/mama",
