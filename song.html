@@ -62,76 +62,39 @@
 </main>
 <footer><div class="wrap footer-inner"><span>ED studio · Музыкальная студия Евгения Дмитриева</span><a class="footer-home" href="/">На главную <svg class="footer-home-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5"/></svg></a></div></footer>
 <script>
-/* Данные страницы задаются параметрами URL. Неуказанные материалы скрываются или помечаются как недоступные. */
-const params=new URLSearchParams(location.search);
-const get=(key,fallback='')=>params.get(key)||fallback;
-const setText=(id,value)=>{if(value)document.getElementById(id).textContent=value};
-const setLink=(id,url)=>{const el=document.getElementById(id);if(url){el.href=url}else{el.classList.add('hidden')}};
-const songAudio=document.getElementById('song-audio');const audioPlay=document.getElementById('audio-play');const audioPlayIcon=document.getElementById('audio-play-icon');const audioProgress=document.getElementById('audio-progress');const audioTime=document.getElementById('audio-time');const fmtTime=value=>{if(!Number.isFinite(value))return'0:00';const m=Math.floor(value/60),s=Math.floor(value%60);return m+':'+String(s).padStart(2,'0')};const paintAudio=()=>{const duration=songAudio.duration||0;audioProgress.value=duration?Math.round(songAudio.currentTime/duration*1000):0;audioTime.textContent=fmtTime(songAudio.currentTime)+' / '+fmtTime(duration);const playing=!songAudio.paused;audioPlay.setAttribute('aria-label',playing?'Пауза':'Воспроизвести');audioPlayIcon.innerHTML=playing?'<path d="M7 5h4v14H7zM15 5h4v14h-4z"/>':'<path d="M8 5v14l11-7z"/>'};audioPlay.addEventListener('click',()=>{if(songAudio.paused)songAudio.play().catch(()=>{});else songAudio.pause()});songAudio.addEventListener('loadedmetadata',paintAudio);songAudio.addEventListener('timeupdate',paintAudio);songAudio.addEventListener('play',paintAudio);songAudio.addEventListener('pause',paintAudio);songAudio.addEventListener('ended',paintAudio);audioProgress.addEventListener('input',()=>{if(songAudio.duration) songAudio.currentTime=Number(audioProgress.value)/1000*songAudio.duration});paintAudio();
-const topTrackButton=document.getElementById('buy-track');
-const topSheetButton=document.getElementById('top-sheet-link');
-const matchTopButtonWidths=()=>{
-  if(window.matchMedia('(min-width: 701px)').matches){
-    topSheetButton.style.width=topTrackButton.offsetWidth+'px';
-  }else{
-    topSheetButton.style.width='';
-  }
-};
-matchTopButtonWidths();
-window.addEventListener('resize',matchTopButtonWidths);
-const audioPlayer=document.querySelector('.audio-player');
-const requestedAudio=get('audio');
-if(requestedAudio){songAudio.querySelector('source').src=requestedAudio;songAudio.load()}else if(get('title','Мама')!=='Мама'){audioPlayer.style.display='none'}
-const linksUrl=get('links');
-const otherButton=document.getElementById('other-toggle');
-if(linksUrl){otherButton.href=linksUrl}else if(get('title','Мама')!=='Мама'){otherButton.classList.add('hidden')}
-
-const audioHome=document.createComment('Место плеера в мобильной версии');
-audioPlayer.parentNode.insertBefore(audioHome,audioPlayer);
-const placeAudioPlayer=()=>{
-  if(window.matchMedia('(min-width: 701px)').matches){
-    document.getElementById('description').after(audioPlayer);
-    audioPlayer.style.marginBottom='';
-  }else{
-    audioHome.parentNode.insertBefore(audioPlayer,audioHome.nextSibling);
-    audioPlayer.style.marginBottom='9px';
-  }
-};
-placeAudioPlayer();
-window.addEventListener('resize',placeAudioPlayer);
-setText('title',get('title','Мама'));
-document.getElementById('audio-caption').textContent=get('title','Мама');
-document.getElementById('track-heading').textContent='Фонограмма «'+get('title','Мама')+'»';
-setText('lyrics-print-title',get('title','Мама'));
-document.title=get('title','Мама')+' — '+get('artist','Ангелина Фомина')+' | ED studio';
-setText('artist',get('artist','Ангелина Фомина'));
-setText('description',get('description','Трогательная песня о маме в красивом исполнении Ангелины Фоминой.'));
-document.getElementById('cover').src=get('cover','https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cc/eb/9e/cceb9e0f-27f5-6a40-fcde-56845e2f6549/7300342670842.jpg/1200x1200bb.webp');
-const defaultLyrics = "1 куплет:\nМама — это слово нежное, родное\nМама — это свет в ночи\nВ этом слове — «Мама» —\nЧто-то есть святое,\nС мамой можно всё пройти.\n\nВетры и туманы, бури, непогоды\nМама, ты пережила.\nМама научила доверять всё Богу,\nКусочек опыта дала.\n\nПрипев:\nМама всё прощает, мама забывает,\nМама в трудный час даёт совет.\nБоль, переживанье, взором прочитает,\nМама бережёт от бед.\n\n2 куплет:\nМама дорогая, ты прости, что редко\nСлышала слова любви!\nМало говорила, мало обнимала\nМама, ты меня прости.\n\nПрипев:\nМама всё прощает, мама забывает,\nМама в трудный час даёт совет.\nБоль, переживанье взором прочитает,\nМама бережёт от бед.\n\nСлышите, родные? Мам своих цените!\nДайте им кусочек теплоты.\nПросто обнимите, розы подарите,\nИ скажите: «Я люблю».\nПросто очень важно слышать эту фразу —\n«Мама, я тебя люблю!»";
-const lyricsText = get('lyrics',defaultLyrics);
-const lyricsEl = document.getElementById('lyrics-text');
-lyricsEl.replaceChildren();
-lyricsText.split(/\n/).forEach(line=>{const p=document.createElement('span');if(/^(1 куплет|2 куплет|Припев):?$/.test(line.trim())){p.className='part-label';p.dataset.kind=line.trim().startsWith('Припев')?'chorus':'verse';p.textContent=line.replace(/:$/,'')}else if(line.trim()===''){p.className='stanza-gap'}else{p.className='lyric-line';p.textContent=line}lyricsEl.appendChild(p)});
-document.getElementById('print-lyrics').addEventListener('click',()=>window.print());
-document.getElementById('copy-lyrics').addEventListener('click',async()=>{const button=document.getElementById('copy-lyrics');try{await navigator.clipboard.writeText(lyricsText);button.textContent='Скопировано ✓';setTimeout(()=>button.textContent='Копировать текст',1800)}catch(e){const area=document.createElement('textarea');area.value=lyricsText;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();try{document.execCommand('copy');button.textContent='Скопировано ✓'}catch(err){button.textContent='Выделите текст вручную'}area.remove();setTimeout(()=>button.textContent='Копировать текст',1800)}});
-setLink('buy-track',get('buy','#materials'));
-setLink('track-link',get('buy','mailto:edvabakan@gmail.com?subject=Фонограмма%20песни%20Мама'));
-const sheetUrl=get('sheet') || (get('title','Мама')==='Мама'?'notes/mama.pdf':'');
-const sheetOpen=document.getElementById('sheet-open-link');
-const sheetDownload=document.getElementById('sheet-link');
-if(sheetUrl){
-  [sheetOpen,sheetDownload].forEach(el=>{el.href=sheetUrl;el.classList.remove('hidden');el.style.display='flex';});
-  const fileName=(get('title','Ноты')+' — ноты.pdf').replace(/[\\/:*?"<>|]/g,'-');
-  sheetDownload.setAttribute('download',fileName);
-  document.getElementById('sheet-note').textContent='';
-}else{
-  sheetOpen.classList.add('hidden');sheetDownload.classList.add('hidden');
-  document.getElementById('sheet-note').textContent='Ноты для этой песни пока не добавлены.';
-}
-[['spotify','spotify'],['apple','apple'],['yandex','yandex'],['vk','vk']].forEach(([id,key])=>{const fallback=get('title','Мама')==='Мама'?(key==='spotify'?'https://open.spotify.com/track/2VoiR2v32SlOl3fdaj6C9O?si=5e6deb24698e49de':key==='apple'?'https://music.apple.com/us/song/%D0%BC%D0%B0%D0%BC%D0%B0/1776591623':key==='yandex'?'https://music.yandex.ru/album/33832789?utm_source=web&utm_medium=copy_link':key==='vk'?'https://vk.ru/audio-2001910905_131910905_5cfafda4ebf44577d3':''):'';setLink(id,get(key,fallback))});
-const other=get('other');
-if(other){other.split('|').filter(Boolean).forEach(entry=>{const split=entry.split('::');if(split.length<2)return;const a=document.createElement('a');a.href=split.slice(1).join('::');a.target='_blank';a.rel='noopener';a.textContent=split[0]+' ↗';document.getElementById('other-list').appendChild(a)})}
-
+(async function(){
+const q=new URLSearchParams(location.search),dataPath=q.get('data');let d={};
+if(dataPath){const response=await fetch(dataPath);if(!response.ok)throw new Error('Song data unavailable');d=await response.json();}
+const val=(k,def='')=>q.has(k)?q.get(k):(d[k]??def);
+const title=val('title','Мама'),artist=val('artist','Ангелина Фомина'),lyrics=val('lyrics','');
+const text=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v||''};
+const link=(id,v)=>{const e=document.getElementById(id);if(v){e.href=v;e.classList.remove('hidden')}else e.classList.add('hidden')};
+text('title',title);text('artist',artist);text('description',val('description'));text('lyrics-print-title',title);text('audio-caption',title);text('track-heading','Фонограмма «'+title+'»');
+document.title=title+' — '+artist+' | ED studio';
+document.querySelector('meta[name="description"]').content=val('description',title+' — '+artist);
+document.querySelector('link[rel="canonical"]').href=location.origin+location.pathname;
+const cover=val('cover');if(cover)document.getElementById('cover').src=cover;else document.getElementById('cover').classList.add('hidden');
+const box=document.getElementById('lyrics-text');box.replaceChildren();
+lyrics.split('\n').forEach(line=>{const e=document.createElement('span');if(/^(Куплет 1|Куплет 2|1 куплет|2 куплет|Припев):?$/.test(line.trim())){e.className='part-label';e.textContent=line.replace(/:$/,'')}else if(!line.trim())e.className='stanza-gap';else{e.className='lyric-line';e.textContent=line}box.appendChild(e)});
+const audio=document.getElementById('song-audio'),player=document.querySelector('.audio-player'),audioUrl=val('audio');
+if(audioUrl){audio.querySelector('source').src=audioUrl;audio.load()}else player.classList.add('hidden');
+const buy=val('buy');link('buy-track',buy||'#materials');link('track-link',buy);
+const sheet=val('sheet');link('sheet-open-link',sheet);link('sheet-link',sheet);
+text('sheet-note',sheet?'':'Ноты для этой песни пока не добавлены.');
+if(sheet)document.getElementById('sheet-link').download=title+' — ноты.pdf';
+const L=d.links||{};['spotify','apple','yandex','vk'].forEach(k=>link(k,q.get(k)||L[k]||''));
+link('other-toggle',q.get('links')||L.other||'');
+const other=q.get('other')||'';other.split('|').forEach(row=>{const p=row.split('::');if(p.length<2)return;const a=document.createElement('a');a.href=p.slice(1).join('::');a.target='_blank';a.rel='noopener';a.textContent=p[0]+' ↗';document.getElementById('other-list').appendChild(a)});
+const play=document.getElementById('audio-play'),icon=document.getElementById('audio-play-icon'),progress=document.getElementById('audio-progress'),time=document.getElementById('audio-time');
+const fmt=n=>Math.floor((n||0)/60)+':'+String(Math.floor((n||0)%60)).padStart(2,'0');
+const paint=()=>{const duration=audio.duration||0;progress.value=duration?audio.currentTime/duration*1000:0;time.textContent=fmt(audio.currentTime)+' / '+fmt(duration);const on=!audio.paused;play.setAttribute('aria-label',on?'Пауза':'Воспроизвести');icon.innerHTML=on?'<path d="M7 5h4v14H7zM15 5h4v14h-4z"/>':'<path d="M8 5v14l11-7z"/>'};
+play.onclick=()=>audio.paused?audio.play().catch(()=>{}):audio.pause();['loadedmetadata','timeupdate','play','pause','ended'].forEach(e=>audio.addEventListener(e,paint));progress.oninput=()=>{if(audio.duration)audio.currentTime=progress.value/1000*audio.duration};paint();
+document.getElementById('print-lyrics').onclick=()=>window.print();
+document.getElementById('copy-lyrics').onclick=async()=>{try{await navigator.clipboard.writeText(lyrics);text('copy-lyrics','Скопировано ✓')}catch(e){text('copy-lyrics','Не удалось скопировать')}setTimeout(()=>text('copy-lyrics','Копировать текст'),1800)};
+const top=document.getElementById('buy-track'),sheetTop=document.getElementById('top-sheet-link');
+const resize=()=>sheetTop.style.width=matchMedia('(min-width:701px)').matches?top.offsetWidth+'px':'';resize();window.addEventListener('resize',resize);
+if(audioUrl){const marker=document.createComment('audio position');player.parentNode.insertBefore(marker,player);const place=()=>{if(matchMedia('(min-width:701px)').matches)document.getElementById('description').after(player);else marker.parentNode.insertBefore(player,marker.nextSibling)};place();window.addEventListener('resize',place)}
+})();
 </script>
 </body>
 </html>
