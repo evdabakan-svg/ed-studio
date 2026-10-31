@@ -145,9 +145,35 @@ function notify(message){toast.textContent=message;toast.classList.add('show');c
   'я иду за звездой вифлеемскою',
   'мама'
  ];
+ const releasePages={
+  'почему в этот день столько света':'/pochemy-v-etot-den',
+  'как прекрасен мир':'/kak-prekrasen-mir',
+  'я иду за звездой вифлеемскою':'/ya-idu-za-zvezdoj',
+  'мама':'/mama'
+ };
  titles.forEach(title=>{
   const song=[...data.querySelectorAll('.song')].find(item=>(item.dataset.name||'').includes(title));
-  if(song){const card=song.cloneNode(true);card.hidden=false;grid.appendChild(card);}
+  if(!song)return;
+  const card=song.cloneNode(true);
+  card.hidden=false;
+  const actions=card.querySelector('.song-actions');
+  if(actions){
+   const materialButtons=[...actions.querySelectorAll('button[data-material]')];
+   const audioButton=materialButtons.find(button=>button.dataset.material==='Фонограмма');
+   materialButtons.forEach(button=>button.remove());
+   const combined=document.createElement('button');
+   combined.type='button';combined.className='song-action';
+   combined.dataset.material='Текст и ноты';combined.textContent='Текст и ноты';
+   if(audioButton)actions.appendChild(audioButton);
+   actions.appendChild(combined);
+   const listen=actions.querySelector('a.song-action.primary');
+   if(listen){
+    listen.href=releasePages[title]||'#';
+    listen.removeAttribute('target');listen.removeAttribute('rel');
+    listen.textContent='Слушать песню';
+   }
+  }
+  grid.appendChild(card);
  });
 })();
 function renderCatalog(){
@@ -308,5 +334,16 @@ renderCatalog();
 (()=>{const button=document.getElementById('scroll-top-button');if(!button)return;const update=()=>button.classList.toggle('is-visible',window.scrollY>420);window.addEventListener('scroll',update,{passive:true});button.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));update();})();
 </script>
 
+
+<style id="latest-release-button-layout">
+.latest-releases .catalog-grid>.song .song-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:auto!important;padding-top:16px}
+.latest-releases .catalog-grid>.song .song-actions .song-action{min-width:0;width:100%;min-height:38px;white-space:normal}
+.latest-releases .catalog-grid>.song .song-actions .song-action.primary{grid-column:1 / -1;grid-row:2;width:100%;min-height:42px}
+@media(max-width:760px){
+.latest-releases .catalog-grid>.song .song-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;width:100%}
+.latest-releases .catalog-grid>.song .song-actions .song-action{flex:none!important;width:100%;min-width:0;min-height:36px;padding:7px 4px;font-size:10px;white-space:normal}
+.latest-releases .catalog-grid>.song .song-actions .song-action.primary{grid-column:1 / -1;grid-row:2;min-height:40px}
+}
+</style>
 </body>
 </html>
