@@ -370,5 +370,22 @@ renderCatalog();
  .latest-releases .catalog-grid>.song .song-action{min-height:36px;padding:7px 4px;font-size:10px}
  .latest-releases .catalog-grid>.song .song-action.primary{min-height:40px}
 }
+</style>
+<style id="latest-release-mobile-equal-height">
+@media(max-width:760px){
+ .latest-releases .catalog-grid{align-items:stretch}
+ .latest-releases .catalog-grid>.song{
+  box-sizing:border-box!important;
+  height:calc(86vw + 205px)!important;
+  min-height:0!important;
+  align-self:stretch;
+ }
+ .latest-releases .catalog-grid>.song>.song-cover,
+ .latest-releases .catalog-grid>.song>.song-small-cover{
+  flex:0 0 auto;
+ }
+ .latest-releases .catalog-grid>.song .song-small-content{flex:1 1 auto}
+ .latest-releases .catalog-grid>.song .song-actions{margin-top:auto!important}
+}
 </style></body>
 </html>
