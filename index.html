@@ -158,9 +158,10 @@ function notify(message){toast.textContent=message;toast.classList.add('show');c
   card.hidden=false;
   const actions=card.querySelector('.song-actions');
   if(actions){
-   const materialButtons=[...actions.querySelectorAll('button[data-material]')];
+   const materialButtons=[...actions.querySelectorAll('[data-material]')];
    const audioButton=materialButtons.find(button=>button.dataset.material==='Фонограмма');
-   materialButtons.forEach(button=>button.remove());
+   materialButtons.forEach(button=>{if(button!==audioButton)button.remove();});
+   actions.querySelectorAll('a:not(.primary)').forEach(link=>link.remove());
    const combined=document.createElement('button');
    combined.type='button';combined.className='song-action';
    combined.dataset.material='Текст и ноты';combined.textContent='Текст и ноты';
@@ -335,15 +336,39 @@ renderCatalog();
 </script>
 
 
-<style id="latest-release-button-layout">
-.latest-releases .catalog-grid>.song .song-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:auto!important;padding-top:16px}
-.latest-releases .catalog-grid>.song .song-actions .song-action{min-width:0;width:100%;min-height:38px;white-space:normal}
-.latest-releases .catalog-grid>.song .song-actions .song-action.primary{grid-column:1 / -1;grid-row:2;width:100%;min-height:42px}
-@media(max-width:760px){
-.latest-releases .catalog-grid>.song .song-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;width:100%}
-.latest-releases .catalog-grid>.song .song-actions .song-action{flex:none!important;width:100%;min-width:0;min-height:36px;padding:7px 4px;font-size:10px;white-space:normal}
-.latest-releases .catalog-grid>.song .song-actions .song-action.primary{grid-column:1 / -1;grid-row:2;min-height:40px}
+
+
+<style id="latest-release-standard-cards">
+.latest-releases .catalog-grid>.song{
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ min-width:0;height:100%;
 }
-</style>
-</body>
+.latest-releases .catalog-grid>.song>.song-cover,
+.latest-releases .catalog-grid>.song>.song-small-cover{
+ display:block;width:100%;height:auto;aspect-ratio:1/1;min-height:0;
+ flex:0 0 auto;background-size:cover;background-position:center;
+}
+.latest-releases .catalog-grid>.song>.song-small-content{
+ display:flex;flex-direction:column;align-items:stretch;gap:0;flex:1;min-width:0;
+}
+.latest-releases .catalog-grid>.song h3{margin:13px 0 0!important;font-size:19px;line-height:1.2}
+.latest-releases .catalog-grid>.song p{margin:6px 0 0!important;font-size:12px;line-height:1.45}
+.latest-releases .catalog-grid>.song .song-small-info{padding:0}
+.latest-releases .catalog-grid>.song .song-actions{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;
+ margin-top:auto!important;padding-top:16px;width:100%;
+}
+.latest-releases .catalog-grid>.song .song-action{
+ display:flex;align-items:center;justify-content:center;width:100%;min-width:0;
+ min-height:38px;padding:7px 8px;font-size:11px;white-space:normal;text-align:center;
+}
+.latest-releases .catalog-grid>.song .song-action.primary{
+ grid-column:1/-1;grid-row:2;min-height:42px;
+}
+@media(max-width:760px){
+ .latest-releases .catalog-grid>.song .song-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .latest-releases .catalog-grid>.song .song-action{min-height:36px;padding:7px 4px;font-size:10px}
+ .latest-releases .catalog-grid>.song .song-action.primary{min-height:40px}
+}
+</style></body>
 </html>
