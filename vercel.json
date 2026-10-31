@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/pochemy-v-etot-den/",
+      "destination": "/pochemy-v-etot-den.html"
+    },
+    {
+      "source": "/pochemy-v-etot-den",
+      "destination": "/pochemy-v-etot-den.html"
+    },
+    {
       "source": "/kak-prekrasen-mir/",
       "destination": "/kak-prekrasen-mir.html"
     },
