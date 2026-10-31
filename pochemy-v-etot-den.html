@@ -178,7 +178,7 @@
 
   const links = { spotify: 'https://open.spotify.com/album/5YgwRRxwRgBY2QCN1SHWZ4', apple: 'https://music.apple.com/us/song/%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-%D0%B2-%D1%8D%D1%82%D0%BE%D1%82-%D0%B4%D0%B5%D0%BD%D1%8C-%D1%81%D1%82%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE-%D1%81%D0%B2%D0%B5%D1%82%D0%B0-feat-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80-%D1%85%D0%B0%D1%80%D0%B8%D1%82%D0%BE%D0%BD%D0%BE%D0%B2/1787125803', yandex: 'https://music.yandex.ru/album/34693837', vk: 'https://vk.ru/audio-2001387483_133387483_462bcee43e431d8fdf' };
   Object.entries(links).forEach(([id, url]) => { if (url) byId(id).href = url; else byId(id).classList.add('hidden'); });
-  const other = byId('other-toggle'); other.classList.add('hidden');
+  const other = byId('other-toggle'); other.href = 'https://links.edstudio.site/pochemy-v-etot-den'; other.classList.remove('hidden');
   byId('buy-track').href = '#materials';
   byId('track-link').href = 'mailto:edvabakan@gmail.com?subject=Фонограмма%20песни%20Почему%20в%20этот%20день%20столько%20света';
 
