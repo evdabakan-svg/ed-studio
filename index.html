@@ -474,5 +474,61 @@ renderCatalog();
   }
 }
 </style>
+
+<style id="latest-release-desktop-actions-and-mobile-quote">
+@media(min-width:761px){
+ .latest-releases .catalog-grid>.song .song-actions{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  grid-template-rows:auto auto!important;
+  align-items:stretch!important;
+  gap:7px!important;
+  width:100%!important;
+  margin-top:auto!important;
+  padding-top:14px!important;
+ }
+ .latest-releases .catalog-grid>.song .song-actions>.song-action:not(.primary){
+  grid-column:auto!important;
+  grid-row:1!important;
+  width:auto!important;
+  min-width:0!important;
+  min-height:38px!important;
+ }
+ .latest-releases .catalog-grid>.song .song-actions>.song-action.primary{
+  grid-column:1 / -1!important;
+  grid-row:2!important;
+  width:100%!important;
+  min-height:42px!important;
+  margin:0!important;
+ }
+}
+@media(max-width:760px){
+ .hero .bible-quote{
+  display:block!important;
+  transform:none!important;
+  max-width:100%!important;
+  margin:17px 0 0!important;
+  font-size:15px!important;
+  line-height:1.5!important;
+ }
+ .hero .bible-quote span{padding-right:0!important}
+}
+</style>
+<script id="mobile-bible-quote-position">
+(()=>{
+ const quote=document.querySelector('.latest-releases .bible-quote');
+ const actions=document.querySelector('.hero-actions');
+ const sectionHead=document.querySelector('.latest-releases .section-head');
+ if(!quote||!actions||!sectionHead)return;
+ const mq=window.matchMedia('(max-width:760px)');
+ const place=()=>{
+  if(mq.matches) actions.insertAdjacentElement('afterend',quote);
+  else sectionHead.appendChild(quote);
+ };
+ place();
+ if(mq.addEventListener)mq.addEventListener('change',place);
+ else mq.addListener(place);
+})();
+</script>
 </body>
 </html>
