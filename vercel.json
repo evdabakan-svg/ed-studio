@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/kak-prekrasen-mir/",
-      "destination": "/song.html?data=%2Fsongs%2Fkak-prekrasen-mir.json"
+      "destination": "/kak-prekrasen-mir.html"
     },
     {
       "source": "/kak-prekrasen-mir",
-      "destination": "/song.html?data=%2Fsongs%2Fkak-prekrasen-mir.json"
+      "destination": "/kak-prekrasen-mir.html"
     },
     {
       "source": "/mama",
