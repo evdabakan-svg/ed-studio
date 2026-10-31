@@ -97,7 +97,7 @@ document.getElementById('print-lyrics').onclick=()=>window.print();
 document.getElementById('copy-lyrics').onclick=async()=>{try{await navigator.clipboard.writeText(lyrics);text('copy-lyrics','Скопировано ✓')}catch(e){text('copy-lyrics','Не удалось скопировать')}setTimeout(()=>text('copy-lyrics','Копировать текст'),1800)};
 const top=document.getElementById('buy-track'),sheetTop=document.getElementById('top-sheet-link');
 const resize=()=>sheetTop.style.width=matchMedia('(min-width:701px)').matches?top.offsetWidth+'px':'';resize();window.addEventListener('resize',resize);
-if(audioUrl){const marker=document.createComment('audio position');player.parentNode.insertBefore(marker,player);const place=()=>{if(matchMedia('(min-width:701px)').matches)document.getElementById('description').after(player);else marker.parentNode.insertBefore(player,marker.nextSibling)};place();window.addEventListener('resize',place)}
+if(audioUrl){const marker=document.createComment('audio position');player.parentNode.insertBefore(marker,player);const place=()=>{if(matchMedia('(min-width:701px)').matches){document.getElementById('description').after(player);player.style.marginBottom=''}else{marker.parentNode.insertBefore(player,marker.nextSibling);player.style.marginBottom='6px'}};place();window.addEventListener('resize',place)}
 })();
 </script>
 </body>
