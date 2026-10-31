@@ -177,11 +177,18 @@
   byId('buy-track').href = '#materials';
   byId('track-link').href = 'mailto:edvabakan@gmail.com?subject=Фонограмма%20песни%20Почему%20в%20этот%20день%20столько%20света';
 
+  // Ширина кнопки «Ноты» точно равна фактической ширине кнопки «Фонограмма».
   const matchButtonWidths = () => {
+    const trackButton = byId('buy-track');
     const notesButton = byId('top-sheet-link');
-    notesButton.style.width = '';
+    if (window.matchMedia('(min-width: 701px)').matches) {
+      notesButton.style.width = trackButton.getBoundingClientRect().width + 'px';
+    } else {
+      notesButton.style.width = '';
+    }
   };
   matchButtonWidths();
+  window.addEventListener('resize', matchButtonWidths);
 })();
 </script>
 </body>
