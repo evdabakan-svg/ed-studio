@@ -59,7 +59,6 @@
 </div></div>
 </section>
 <section class="section" id="lyrics"><div class="section-head"><h2>Текст песни</h2><h2 id="lyrics-print-title" class="print-only-title">Почему в этот день столько света?</h2><div class="lyrics-heading-actions"><button class="copy-lyrics print-lyrics" id="print-lyrics" type="button">Распечатать</button><button class="copy-lyrics" id="copy-lyrics" type="button">Копировать текст</button></div></div><div class="lyrics" id="lyrics-text">Текст песни будет добавлен.</div></section>
-<section class="section" id="sheet-preview"><div class="section-head"><h2>Предпросмотр нот</h2></div><div class="note-preview"><p id="sheet-preview-empty">Предпросмотр появится здесь после загрузки PDF-файла нот.</p><iframe id="sheet-preview-frame" class="hidden" title="Предпросмотр нот" loading="lazy"></iframe></div></section>
 <section class="section" id="materials"><div class="section-head"><h2>Материалы песни</h2></div><div class="materials">
 <article class="material"><span class="material-label">Аудио</span><h3 id="track-heading">Фонограмма</h3><p id="track-note"></p><a class="btn primary" id="track-link" href="mailto:edvabakan@gmail.com?subject=Фонограмма%20песни">Купить фонограмму</a></article>
 <article class="material" id="sheet-card"><span class="material-label">Файл</span><h3>Ноты песни</h3><p id="sheet-note"></p><div class="sheet-actions"><a class="btn" id="sheet-open-link" href="#" target="_blank" rel="noopener">Открыть ноты <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M7 4h9v9"/></svg></a><a class="btn" id="sheet-link" href="#" download>Скачать ноты <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v12M5 10l5 5 5-5M4 17h12"/></svg></a></div></article>
@@ -76,7 +75,7 @@
 (() => {
   const songTitle = 'Почему в этот день столько света?';
   const artist = 'Александра Прокопчук, Вадим Ерёменко, Полина Бублик, Александр Харитонов';
-  const audioUrl = ''; // Добавим MP3 после загрузки файла.
+  const audioUrl = 'https://raw.githubusercontent.com/evdabakan-svg/ed-studio/main/audio/pochemy-v-etot-den.mp3';
   const lyrics = "Куплет 1:\nПочему в этот день столько света,\nТрепет в сердце, в душе торжество\nИ сияет огнями планета?\nПотому что пришло Рождество.\n\nПрипев:\nНад землей слышно Ангелов пение,\nНебеса проповедуют вновь:\nБог явил людям благоволение\nВ мир сошла Неземная Любовь.\n\nКуплет 2:\nВ полуночь на поля Вифлеема\nОпустился с небес звездный мост\nИ, страданью людей с болью внемля,\nВ мир греховный пришел Сам Христос.\n\nКуплет 3:\nОн с любовью принес в Своих дланях\nБожий дар и зажег Свет во тьме,\nПотому и поют христиане:\n«Слава в вышних и мир на земле!»";
   const byId = id => document.getElementById(id);
   document.title = songTitle + ' — ' + artist + ' | ED studio';
@@ -102,20 +101,15 @@
     lyricsBox.appendChild(item);
   });
 
-  // Ноты: файл будет добавлен в notes/pochemy-v-etot-den.pdf.
+  // PDF нот хранится в репозитории в папке notes.
   const sheetUrl = '/notes/pochemy-v-etot-den.pdf';
   byId('sheet-open-link').href = sheetUrl;
   byId('sheet-link').href = sheetUrl;
   byId('sheet-link').download = 'Почему в этот день столько света — ноты.pdf';
-  byId('top-sheet-link').href = '#sheet-preview';
-  byId('sheet-note').textContent = 'PDF-файл нот и его предпросмотр появятся после загрузки нот.';
-  byId('sheet-preview-frame').src = sheetUrl;
+  byId('top-sheet-link').href = '#materials';
+  byId('sheet-note').textContent = 'PDF-файл можно будет открыть или скачать.';
   fetch(sheetUrl, { method: 'HEAD' }).then(response => {
-    if (response.ok) {
-      byId('sheet-note').textContent = 'Ноты доступны для просмотра и скачивания.';
-      byId('sheet-preview-frame').classList.remove('hidden');
-      byId('sheet-preview-empty').classList.add('hidden');
-    } else {
+    if (!response.ok) {
       byId('sheet-open-link').classList.add('hidden');
       byId('sheet-link').classList.add('hidden');
     }
@@ -182,7 +176,7 @@
     setTimeout(() => button.textContent = 'Копировать текст', 1800);
   });
 
-  const links = { spotify: '', apple: 'https://music.apple.com/us/song/%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-%D0%B2-%D1%8D%D1%82%D0%BE%D1%82-%D0%B4%D0%B5%D0%BD%D1%8C-%D1%81%D1%82%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE-%D1%81%D0%B2%D0%B5%D1%82%D0%B0-feat-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80-%D1%85%D0%B0%D1%80%D0%B8%D1%82%D0%BE%D0%BD%D0%BE%D0%B2/1787125803', yandex: '', vk: '' };
+  const links = { spotify: 'https://open.spotify.com/album/5YgwRRxwRgBY2QCN1SHWZ4', apple: 'https://music.apple.com/us/song/%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-%D0%B2-%D1%8D%D1%82%D0%BE%D1%82-%D0%B4%D0%B5%D0%BD%D1%8C-%D1%81%D1%82%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE-%D1%81%D0%B2%D0%B5%D1%82%D0%B0-feat-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80-%D1%85%D0%B0%D1%80%D0%B8%D1%82%D0%BE%D0%BD%D0%BE%D0%B2/1787125803', yandex: 'https://music.yandex.ru/album/34693837', vk: 'https://vk.ru/audio-2001387483_133387483_462bcee43e431d8fdf' };
   Object.entries(links).forEach(([id, url]) => { if (url) byId(id).href = url; else byId(id).classList.add('hidden'); });
   const other = byId('other-toggle'); other.classList.add('hidden');
   byId('buy-track').href = '#materials';
