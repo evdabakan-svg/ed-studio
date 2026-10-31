@@ -369,5 +369,9 @@ renderCatalog();
 </style><script>
 (()=>{const node=document.getElementById('hero-date');if(!node)return;const now=new Date();node.textContent=String(now.getDate()).padStart(2,'0')+' — '+String(now.getMonth()+1).padStart(2,'0');})();
 </script>
+
+<style id="latest-release-compact-final-override">
+@media(max-width:760px){.latest-releases .catalog-grid>.song{height:calc(86vw + 190px)!important}}
+</style>
 </body>
 </html>
