@@ -113,7 +113,7 @@
 <header><div class="wrap nav"><a class="brand" href="#">ED <span>studio</span></a><nav class="navlinks" aria-label="Основная навигация"><a href="#catalog">Каталог песен</a><a href="#materials">Фонограммы и ноты</a><a href="#about">О студии</a><a href="#contact">Контакты</a></nav><a class="nav-cta" href="#contact">Связаться ↗︎</a></div></header>
 <main class="wrap">
 <section class="hero">
-<div class="hero-visual"><div class="image-frame"><div class="image-inner"><div class="visual-mark">♪</div></div><div class="image-caption"><span>ED STUDIO</span><span>01 — 26</span></div></div><div class="side-note">ХРИСТИАНСКАЯ МУЗЫКА</div></div>
+<div class="hero-visual"><div class="image-frame"><div class="image-inner"><div class="visual-mark">♪</div></div><div class="image-caption"><span>ED STUDIO</span><span id="hero-date">31 — 10</span></div></div><div class="side-note">ХРИСТИАНСКАЯ МУЗЫКА</div></div>
 <div><div class="eyebrow">Музыкальная студия Евгения Дмитриева</div><h1>Христианское <em>творчество</em></h1><p class="hero-copy">На сайте собраны проекты, к которым я имею отношение. А ещё здесь найдёте тексты и ноты песен, выпущенных ED studio. Фонограммы тоже можете приобрести здесь.</p><div class="hero-actions"><a class="btn primary" href="#catalog-songs-heading">Перейти в каталог ↗︎</a><a class="btn" href="#materials">Выбрать материалы</a></div>
 </div>
 </section>
@@ -146,10 +146,10 @@ function notify(message){toast.textContent=message;toast.classList.add('show');c
   'мама'
  ];
  const releasePages={
-  'почему в этот день столько света':'/pochemy-v-etot-den',
-  'как прекрасен мир':'/kak-prekrasen-mir',
-  'я иду за звездой вифлеемскою':'/ya-idu-za-zvezdoj',
-  'мама':'/mama'
+  'почему в этот день столько света':'https://links.edstudio.site/pochemy-v-etot-den/',
+  'как прекрасен мир':'https://links.edstudio.site/kak-prekrasen-mir/',
+  'я иду за звездой вифлеемскою':'https://links.edstudio.site/ya-idu-za-zvezdoj/',
+  'мама':'https://links.edstudio.site/mama/'
  };
  titles.forEach(title=>{
   const song=[...data.querySelectorAll('.song')].find(item=>(item.dataset.name||'').includes(title));
@@ -387,5 +387,8 @@ renderCatalog();
  .latest-releases .catalog-grid>.song .song-small-content{flex:1 1 auto}
  .latest-releases .catalog-grid>.song .song-actions{margin-top:8px!important;padding-top:0!important}
 }
-</style></body>
+</style><script>
+(()=>{const node=document.getElementById('hero-date');if(!node)return;const now=new Date();node.textContent=String(now.getDate()).padStart(2,'0')+' — '+String(now.getMonth()+1).padStart(2,'0');})();
+</script>
+</body>
 </html>
