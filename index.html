@@ -339,15 +339,18 @@ renderCatalog();
 
 
 <style id="latest-release-compact-alignment">
-.latest-releases .catalog-grid>.song{height:auto!important;min-height:0!important}
-.latest-releases .catalog-grid>.song h3{height:46px;min-height:46px;overflow:hidden;margin:9px 0 0!important;display:flex;align-items:flex-start}
-.latest-releases .catalog-grid>.song p{height:36px;min-height:36px;overflow:hidden;margin:4px 0 0!important;display:block}
-.latest-releases .catalog-grid>.song .song-actions{margin-top:10px!important;padding-top:0!important}
+.latest-releases .catalog-grid{align-items:stretch}
+.latest-releases .catalog-grid>.song{display:flex!important;flex-direction:column!important;height:100%!important;min-height:0!important}
+.latest-releases .catalog-grid>.song h3{height:auto!important;min-height:0!important;display:block!important;margin:9px 0 0!important;font-size:19px;line-height:1.2}
+.latest-releases .catalog-grid>.song p{height:auto!important;min-height:0!important;display:block!important;margin:4px 0 0!important;font-size:12px;line-height:1.4}
+.latest-releases .catalog-grid>.song .song-small-info{padding:0!important}
+.latest-releases .catalog-grid>.song .song-actions{margin-top:auto!important;padding-top:14px!important;width:100%}
 @media(max-width:760px){
- .latest-releases .catalog-grid>.song{height:calc(86vw + 190px)!important}
- .latest-releases .catalog-grid>.song h3{height:46px;min-height:46px;margin-top:8px!important;font-size:18px;line-height:1.2}
- .latest-releases .catalog-grid>.song p{height:34px;min-height:34px;margin-top:3px!important;font-size:11px;line-height:1.4}
- .latest-releases .catalog-grid>.song .song-actions{margin-top:8px!important;padding-top:0!important}
+ .latest-releases .catalog-grid{align-items:stretch}
+ .latest-releases .catalog-grid>.song{height:calc(86vw + 190px)!important;min-height:0!important}
+ .latest-releases .catalog-grid>.song h3{margin-top:8px!important;font-size:18px;line-height:1.2}
+ .latest-releases .catalog-grid>.song p{margin-top:4px!important;font-size:11px;line-height:1.4}
+ .latest-releases .catalog-grid>.song .song-actions{margin-top:auto!important;padding-top:12px!important}
 }
 </style>
 <style id="latest-release-mobile-equal-height">
