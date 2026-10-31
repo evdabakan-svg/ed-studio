@@ -18,11 +18,11 @@
     },
     {
       "source": "/mama",
-      "destination": "/song.html?data=%2Fsongs%2Fmama.json"
+      "destination": "/mama.html"
     },
     {
       "source": "/mama/",
-      "destination": "/song.html?data=%2Fsongs%2Fmama.json"
+      "destination": "/mama.html"
     }
   ],
   "redirects": [
