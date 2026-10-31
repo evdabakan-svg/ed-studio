@@ -31,6 +31,14 @@
     {
       "source": "/ya-idu-za-zvezdoj/",
       "destination": "/ya-idu-za-zvezdoj.html"
+    },
+    {
+      "source": "/prostilos-leto",
+      "destination": "/prostilos-leto.html"
+    },
+    {
+      "source": "/prostilos-leto/",
+      "destination": "/prostilos-leto.html"
     }
   ],
   "redirects": [
