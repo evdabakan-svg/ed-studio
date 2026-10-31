@@ -90,7 +90,7 @@
   lyricsBox.replaceChildren();
   lyrics.split('\n').forEach(line => {
     const item = document.createElement('span');
-    if (/^(Куплет 1|Куплет 2|Припев):?$/.test(line.trim())) {
+    if (/^(Куплет 1|Куплет 2|Куплет 3|Припев):?$/.test(line.trim())) {
       item.className = 'part-label';
       item.textContent = line.replace(/:$/, '');
     } else if (!line.trim()) {
