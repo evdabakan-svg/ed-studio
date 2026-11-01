@@ -55,6 +55,14 @@
     {
       "source": "/kolokolchiki-zvenyat/",
       "destination": "/kolokolchiki-zvenyat.html"
+    },
+    {
+      "source": "/rozhdestvenskaya-noch",
+      "destination": "/rozhdestvenskaya-noch.html"
+    },
+    {
+      "source": "/rozhdestvenskaya-noch/",
+      "destination": "/rozhdestvenskaya-noch.html"
     }
   ],
   "redirects": [
