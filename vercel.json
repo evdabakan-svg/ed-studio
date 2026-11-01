@@ -47,6 +47,14 @@
     {
       "source": "/spasibo-tebe-iisus/",
       "destination": "/spasibo-tebe-iisus.html"
+    },
+    {
+      "source": "/kolokolchiki-zvenyat",
+      "destination": "/kolokolchiki-zvenyat.html"
+    },
+    {
+      "source": "/kolokolchiki-zvenyat/",
+      "destination": "/kolokolchiki-zvenyat.html"
     }
   ],
   "redirects": [
