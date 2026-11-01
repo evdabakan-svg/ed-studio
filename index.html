@@ -537,5 +537,90 @@ renderCatalog();
  else mq.addListener(place);
 })();
 </script>
+
+<style id="catalog-editorial-list-v1">
+/* Каталог: редакционный музыкальный список */
+#song-list-items .song-list-row{
+ display:grid!important;
+ grid-template-columns:84px minmax(0,1fr) auto!important;
+ grid-template-rows:minmax(64px,auto)!important;
+ align-items:center!important;
+ gap:12px 20px!important;
+ padding:15px 0!important;
+ border-bottom:1px solid var(--line)!important;
+}
+#song-list-items .song-list-cover-wrap{
+ grid-column:1!important;grid-row:1!important;
+ width:84px!important;align-self:center!important;
+}
+#song-list-items .song-list-cover-wrap .song-list-thumb{
+ width:84px!important;height:84px!important;aspect-ratio:1/1!important;
+}
+#song-list-items .song-list-number{
+ margin-top:5px!important;font-size:11px!important;
+}
+#song-list-items .song-list-info{
+ grid-column:2!important;grid-row:1!important;
+ min-width:0!important;
+}
+#song-list-items .song-list-title{
+ font:normal 22px/1.18 var(--serif)!important;
+ letter-spacing:-.35px!important;
+}
+#song-list-items .song-list-artist{
+ margin-top:6px!important;font-size:12px!important;
+}
+#song-list-items .song-list-actions{
+ grid-column:3!important;grid-row:1!important;
+ display:flex!important;align-items:center!important;justify-content:flex-end!important;
+ flex-wrap:nowrap!important;gap:7px!important;width:auto!important;margin:0!important;
+}
+#song-list-items .song-list-link,
+#song-list-items .song-list-actions button{
+ box-sizing:border-box!important;width:108px!important;min-width:108px!important;
+ height:38px!important;min-height:38px!important;flex:0 0 108px!important;
+ padding:0 8px!important;font:11px Arial,Helvetica,sans-serif!important;
+ white-space:nowrap!important;
+}
+#song-list-items .song-list-link{order:3!important}
+#song-list-items .song-list-actions button:first-child{order:1!important}
+#song-list-items .song-list-actions button:nth-child(2){order:2!important}
+#song-list-items .song-list-actions .is-disabled{opacity:.3!important}
+@media(max-width:760px){
+ #song-list-items .song-list-row{
+  grid-template-columns:68px minmax(0,1fr)!important;
+  grid-template-rows:auto auto!important;
+  gap:9px 13px!important;padding:14px 0!important;
+ }
+ #song-list-items .song-list-cover-wrap{
+  grid-column:1!important;grid-row:1!important;width:68px!important;
+ }
+ #song-list-items .song-list-cover-wrap .song-list-thumb{
+  width:68px!important;height:68px!important;
+ }
+ #song-list-items .song-list-number{margin-top:5px!important}
+ #song-list-items .song-list-info{grid-column:2!important;grid-row:1!important;align-self:center!important}
+ #song-list-items .song-list-title{font-size:19px!important;line-height:1.16!important}
+ #song-list-items .song-list-artist{font-size:11px!important;margin-top:5px!important}
+ #song-list-items .song-list-actions{
+  grid-column:1 / -1!important;grid-row:2!important;
+  display:flex!important;width:100%!important;gap:6px!important;
+  justify-content:stretch!important;margin:0!important;
+ }
+ #song-list-items .song-list-link,
+ #song-list-items .song-list-actions button{
+  width:auto!important;min-width:0!important;height:38px!important;min-height:38px!important;
+  flex:1 1 0!important;padding:0 4px!important;font-size:10px!important;
+  white-space:nowrap!important;
+ }
+}
+@media(max-width:360px){
+ #song-list-items .song-list-row{grid-template-columns:58px minmax(0,1fr)!important;gap:8px 10px!important}
+ #song-list-items .song-list-cover-wrap,#song-list-items .song-list-cover-wrap .song-list-thumb{width:58px!important}
+ #song-list-items .song-list-cover-wrap .song-list-thumb{height:58px!important}
+ #song-list-items .song-list-title{font-size:17px!important}
+ #song-list-items .song-list-link,#song-list-items .song-list-actions button{font-size:9px!important}
+}
+</style>
 </body>
 </html>
