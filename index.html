@@ -598,8 +598,18 @@ renderCatalog();
  #song-list-items .song-list-cover-wrap .song-list-thumb{
   width:68px!important;height:68px!important;
  }
- #song-list-items .song-list-number{margin-top:5px!important}
- #song-list-items .song-list-info{grid-column:2!important;grid-row:1!important;align-self:center!important}
+ #song-list-items .song-list-row{position:relative!important}
+ #song-list-items .song-list-number{
+  position:absolute!important;top:8px!important;left:0!important;z-index:2!important;
+  margin:0!important;padding:3px 6px!important;
+  background:var(--green)!important;color:#fff!important;
+  font-size:10px!important;line-height:1!important;border-radius:0 0 5px 0!important;
+ }
+ #song-list-items .song-list-info{
+  grid-column:2!important;grid-row:1!important;align-self:center!important;
+  display:flex!important;flex-direction:column!important;justify-content:center!important;
+  min-height:68px!important;
+ }
  #song-list-items .song-list-title{font-size:19px!important;line-height:1.16!important}
  #song-list-items .song-list-artist{font-size:11px!important;margin-top:5px!important}
  #song-list-items .song-list-actions{
