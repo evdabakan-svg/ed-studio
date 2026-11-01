@@ -79,7 +79,7 @@
   const songTitle = 'Колокольчики звенят';
   const artist = 'Семья Прокопович';
   const audioUrl = 'https://raw.githubusercontent.com/evdabakan-svg/ed-studio/main/audio/%D0%9A%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE%D0%BB%D1%8C%D1%87%D0%B8%D0%BA%D0%B8%20%D0%B7%D0%B2%D0%B5%D0%BD%D1%8F%D1%82.mp3';
-  const lyrics = "Куплет 1:\nКолокольчики звенят\nБим - бом, бим - бом,\nО Христе нам говорят\nНыне радость,\nРадость, торжество,\nНыне праздник,\nПраздник Рождество.\n\nКуплет 2:\nСлед остался на снегу,\nБело кругом,\nСани по снегу бегут,\nЗимний вечер,\nНа дворе мороз,\nВ этот вечер был рожден Христос.\n\nКуплет 3:\nВ доме блеск и красота,\nВеселится детвора,\nЗа окошком\nСнегом замело,\nС Иисусом будет хорошо.";
+  const lyrics = "1 куплет:\nКолокольчики звенят\nБим - бом, бим - бом,\nО Христе нам говорят\nБим-бом, бим-бом.\n\nНыне радость,\nРадость, торжество,\nНыне праздник,\nПраздник Рождество.\nБим-бом, бим-бом.\n\n2 куплет:\nСлед остался на снегу,\nБело кругом,\nСани по снегу бегут,\nБим-бом, бим-бом.\n\nЗимний вечер,\nна дворе мороз,\nВ этот вечер был рожден Христос,\nБим-бом, бим-бом.\n\n3 куплет:\nВ доме блеск и красота,\nбим-бом, бим-бом\nВеселится детвора,\nбим-бом, бим-бом\n\nЗа окошком\nСнегом замело,\nС Иисусом будет хорошо,\nБим-бом, бим-бом.";
   const byId = id => document.getElementById(id);
   document.title = songTitle + ' — ' + artist + ' | ED studio';
   byId('title').textContent = songTitle;
@@ -92,7 +92,7 @@
   lyricsBox.replaceChildren();
   lyrics.split('\n').forEach(line => {
     const item = document.createElement('span');
-    if (/^(Куплет 1|Куплет 2|Куплет 3|Припев):?$/.test(line.trim())) {
+    if (/^(Куплет [123]|[123] куплет|Припев):?$/i.test(line.trim())) {
       item.className = 'part-label';
       item.textContent = line.replace(/:$/, '');
     } else if (!line.trim()) {
