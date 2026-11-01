@@ -39,6 +39,14 @@
     {
       "source": "/prostilos-leto/",
       "destination": "/prostilos-leto.html"
+    },
+    {
+      "source": "/spasibo-tebe-iisus",
+      "destination": "/spasibo-tebe-iisus.html"
+    },
+    {
+      "source": "/spasibo-tebe-iisus/",
+      "destination": "/spasibo-tebe-iisus.html"
     }
   ],
   "redirects": [
