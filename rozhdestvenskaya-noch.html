@@ -87,7 +87,7 @@ document.querySelector('meta[name="description"]').content=val('description',tit
 document.querySelector('link[rel="canonical"]').href=location.origin+location.pathname;
 const cover=val('cover');if(cover)document.getElementById('cover').src=cover;else document.getElementById('cover').classList.add('hidden');
 const box=document.getElementById('lyrics-text');box.replaceChildren();
-lyrics.split('\n').forEach(line=>{const e=document.createElement('span');if(/^(Куплет \\d+|\\d+ куплет|Припев):?$/i.test(line.trim())){e.className='part-label';e.textContent=line.replace(/:$/,'')}else if(!line.trim())e.className='stanza-gap';else{e.className='lyric-line';e.textContent=line}box.appendChild(e)});
+lyrics.split('\n').forEach(line=>{const e=document.createElement('span');if(/^(Куплет \d+|\d+ куплет|Припев):?$/i.test(line.trim())){e.className='part-label';e.textContent=line.replace(/:$/,'')}else if(!line.trim())e.className='stanza-gap';else{e.className='lyric-line';e.textContent=line}box.appendChild(e)});
 const audio=document.getElementById('song-audio'),player=document.querySelector('.audio-player'),audioUrl=val('audio');
 if(audioUrl){audio.querySelector('source').src=audioUrl;audio.load()}else player.classList.add('hidden');
 const buy=val('buy');document.getElementById('buy-track').href='#materials';link('track-link',buy);
