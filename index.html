@@ -191,7 +191,7 @@ function renderCatalog(){
   if(!show)return;
   visible++;
   const title=item.querySelector('h3').textContent;
-  const artist=item.querySelector('p').textContent;
+  const artist=(item.dataset.name||'').startsWith('почему в этот день столько света')?'ED studio':item.querySelector('p').textContent;
   const link=item.dataset.link||item.querySelector('.song-action.primary').href;
   const coverNode=item.querySelector('.song-cover, .song-small-cover');
   const row=document.createElement('div');
