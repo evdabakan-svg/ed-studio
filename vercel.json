@@ -71,6 +71,14 @@
     {
       "source": "/radost-rozhdestva/",
       "destination": "/radost-rozhdestva.html"
+    },
+    {
+      "source": "/ocheredi",
+      "destination": "/ocheredi.html"
+    },
+    {
+      "source": "/ocheredi/",
+      "destination": "/ocheredi.html"
     }
   ],
   "redirects": [
