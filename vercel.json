@@ -63,6 +63,14 @@
     {
       "source": "/rozhdestvenskaya-noch/",
       "destination": "/rozhdestvenskaya-noch.html"
+    },
+    {
+      "source": "/radost-rozhdestva",
+      "destination": "/radost-rozhdestva.html"
+    },
+    {
+      "source": "/radost-rozhdestva/",
+      "destination": "/radost-rozhdestva.html"
     }
   ],
   "redirects": [
