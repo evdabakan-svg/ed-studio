@@ -276,7 +276,7 @@ renderCatalog();
     <div class="footer-main">
       <a class="footer-brand" href="#top">ED<span>studio</span></a>
       <p class="footer-tagline">Христианское творчество<br>в песнях и музыке</p>
-      <a class="footer-contact" href="mailto:evdabakan@gmail.com">Связаться со студией <svg class="footer-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="footer-contacts"><a class="footer-contact" href="mailto:e.v.d.abakan@gmail.com">e.v.d.abakan@gmail.com <svg class="footer-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="footer-contact" href="https://t.me/ev_dmitriev" target="_blank" rel="noopener noreferrer">Написать в Telegram <svg class="footer-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div>
     <div class="footer-nav-wrap">
       
@@ -299,7 +299,7 @@ renderCatalog();
 .footer-brand{display:inline-flex;align-items:center;gap:9px;width:max-content;max-width:100%;padding:13px 17px 15px;background:#f1f0e7;border:1px solid rgba(255,255,255,.45);box-shadow:6px 6px 0 #a9c69a;color:#151a16;text-decoration:none;font:800 clamp(34px,5vw,52px)/.9 Arial,Helvetica,sans-serif;letter-spacing:-.075em}
 .footer-brand span{display:inline-block;margin-left:1px;color:#426749;font-weight:500;font-style:normal;letter-spacing:-.07em}
 .footer-tagline{margin:22px 0 0;color:#d1d9ce;font:italic 16px/1.5 var(--serif,Georgia,serif)}
-.footer-contact{grid-column:2;grid-row:1 / span 2;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0;border-top:1px solid rgba(245,243,233,.4);border-bottom:1px solid rgba(245,243,233,.4);color:#f5f3e9;text-decoration:none;font-size:12px;letter-spacing:.02em}
+.footer-contacts{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;gap:0}.footer-contact{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0;border-top:1px solid rgba(245,243,233,.4);color:#f5f3e9;text-decoration:none;font-size:12px;letter-spacing:.02em}.footer-contact:last-child{border-bottom:1px solid rgba(245,243,233,.4)}
 .footer-contact .footer-arrow{display:block;flex:0 0 22px;width:22px;height:22px;color:#a9c69a;transition:transform .2s}
 .footer-contact:hover .footer-arrow{transform:translate(3px,-3px)}
 .footer-nav-wrap{display:flex;align-items:center;flex-wrap:wrap;gap:14px 30px;padding:19px 0 22px;border-top:1px solid rgba(245,243,233,.2)}
@@ -307,7 +307,7 @@ renderCatalog();
 .footer-nav-wrap a:hover{opacity:1;color:#a9c69a}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:14px;border-top:1px solid rgba(245,243,233,.2);padding-top:14px;color:#bdc9be;font-size:10px}
 .footer-up:hover{color:#a9c69a}
-@media(max-width:650px){.site-footer{margin-top:54px;padding-bottom:17px}.footer-inner{width:calc(100% - 36px)}.footer-main{grid-template-columns:1fr;gap:20px;padding:30px 0 27px}.footer-brand{font-size:clamp(34px,10vw,46px);padding:12px 14px 13px;box-shadow:4px 4px 0 #a9c69a}.footer-tagline{margin-top:13px;font-size:15px}.footer-contact{grid-column:1;grid-row:auto;max-width:100%;padding:15px 0}.footer-nav-wrap{gap:17px 20px;padding:17px 0 20px}.footer-nav-wrap a{font-size:12px}.footer-bottom{align-items:flex-start;flex-direction:column;gap:9px}}
+@media(max-width:650px){.site-footer{margin-top:54px;padding-bottom:17px}.footer-inner{width:calc(100% - 36px)}.footer-main{grid-template-columns:1fr;gap:20px;padding:30px 0 27px}.footer-brand{font-size:clamp(34px,10vw,46px);padding:12px 14px 13px;box-shadow:4px 4px 0 #a9c69a}.footer-tagline{margin-top:13px;font-size:15px}.footer-contacts{grid-column:1;grid-row:auto;max-width:100%}.footer-contact{max-width:100%;padding:15px 0}.footer-nav-wrap{gap:17px 20px;padding:17px 0 20px}.footer-nav-wrap a{font-size:12px}.footer-bottom{align-items:flex-start;flex-direction:column;gap:9px}}
 </style>
 <style id="all-songs-numbering-fix">.song-list-number{display:block!important;visibility:visible!important;opacity:1!important;color:#274B3A;font:700 12px/1.2 Arial,sans-serif;margin:0 0 4px;text-align:left}
 @media(max-width:760px){.song-list-cover-wrap .song-list-number{align-self:center;width:30px;min-height:23px;box-sizing:border-box;margin:7px auto 0;padding:4px 0 3px;border:1px solid #274B3A;border-radius:999px;background:#f4f5ed;color:#274B3A;font:600 11px/1.2 Arial,sans-serif;letter-spacing:.5px;text-align:center;box-shadow:0 2px 5px rgba(39,75,58,.10)}}
