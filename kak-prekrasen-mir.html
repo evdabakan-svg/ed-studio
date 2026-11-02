@@ -171,7 +171,8 @@
   };
   Object.entries(links).forEach(([id, url]) => { byId(id).href = url; });
   const other = byId('other-toggle');
-  other.classList.add('hidden');
+  other.href = 'https://links.edstudio.site/kak-prekrasen-mir/';
+  other.classList.remove('hidden');
   byId('buy-track').href = '#materials';
   byId('track-link').href = 'mailto:edvabakan@gmail.com?subject=Фонограмма%20песни%20Как%20прекрасен%20мир';
 
