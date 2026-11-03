@@ -95,5 +95,16 @@
       "destination": "/",
       "permanent": true
     }
+  ],
+  "headers": [
+    {
+      "source": "/documents/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    }
   ]
 }
