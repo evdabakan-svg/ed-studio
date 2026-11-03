@@ -1,5 +1,7 @@
 {
   "rewrites": [
+    {"source":"/ne-upusti-schaste","destination":"/ne-upusti-schaste.html"},
+    {"source":"/ne-upusti-schaste/","destination":"/ne-upusti-schaste.html"},
     {
       "source": "/molodezhnye-vechera/",
       "destination": "/molodezhnye-vechera.html"
