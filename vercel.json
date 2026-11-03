@@ -81,6 +81,14 @@
       "destination": "/radost-rozhdestva.html"
     },
     {
+      "source": "/pesnya-dlya-sestry",
+      "destination": "/pesnya-dlya-sestry.html"
+    },
+    {
+      "source": "/pesnya-dlya-sestry/",
+      "destination": "/pesnya-dlya-sestry.html"
+    },
+    {
       "source": "/ocheredi",
       "destination": "/ocheredi.html"
     },
