@@ -1,7 +1,21 @@
 {
   "rewrites": [
-    {"source":"/ne-upusti-schaste","destination":"/ne-upusti-schaste.html"},
-    {"source":"/ne-upusti-schaste/","destination":"/ne-upusti-schaste.html"},
+    {
+      "source": "/schastliv-ya-u-nog-iisusa",
+      "destination": "/schastliv-ya-u-nog-iisusa.html"
+    },
+    {
+      "source": "/schastliv-ya-u-nog-iisusa/",
+      "destination": "/schastliv-ya-u-nog-iisusa.html"
+    },
+    {
+      "source": "/ne-upusti-schaste",
+      "destination": "/ne-upusti-schaste.html"
+    },
+    {
+      "source": "/ne-upusti-schaste/",
+      "destination": "/ne-upusti-schaste.html"
+    },
     {
       "source": "/molodezhnye-vechera/",
       "destination": "/molodezhnye-vechera.html"
