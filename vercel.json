@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/vot-i-nastal-prekrasnyj-den/",
+      "destination": "/vot-i-nastal-prekrasnyj-den.html"
+    },
+    {
+      "source": "/vot-i-nastal-prekrasnyj-den",
+      "destination": "/vot-i-nastal-prekrasnyj-den.html"
+    },
+    {
       "source": "/schastliv-ya-u-nog-iisusa",
       "destination": "/schastliv-ya-u-nog-iisusa.html"
     },
