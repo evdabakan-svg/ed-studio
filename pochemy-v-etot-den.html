@@ -197,3 +197,36 @@
 </script>
 </body>
 </html>
+
+/* Мобильная адаптация платёжной кнопки LAVA внутри узкой карточки */
+@media(max-width:700px){
+  #lava-widget-container{
+    width:140px!important;
+    min-width:0!important;
+    max-width:100%!important;
+    height:35px!important;
+    min-height:35px!important;
+    overflow:visible!important;
+  }
+  #lava-widget-container iframe{
+    width:200px!important;
+    min-width:200px!important;
+    max-width:none!important;
+    height:50px!important;
+    min-height:50px!important;
+    transform:scale(.7);
+    transform-origin:top left;
+  }
+  .lava-fallback{
+    display:block;
+    max-width:100%;
+    font-size:10px;
+    line-height:1.35;
+    overflow-wrap:anywhere;
+    margin-top:5px;
+  }
+}
+@media(max-width:360px){
+  #lava-widget-container{width:112px!important;height:28px!important;min-height:28px!important}
+  #lava-widget-container iframe{transform:scale(.56)}
+}
