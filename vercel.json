@@ -1,6 +1,38 @@
 {
   "rewrites": [
     {
+      "source": "/schaste/",
+      "destination": "/schaste.html"
+    },
+    {
+      "source": "/schaste",
+      "destination": "/schaste.html"
+    },
+    {
+      "source": "/zhemchuzhina/",
+      "destination": "/zhemchuzhina.html"
+    },
+    {
+      "source": "/zhemchuzhina",
+      "destination": "/zhemchuzhina.html"
+    },
+    {
+      "source": "/svyatoj-utes/",
+      "destination": "/svyatoj-utes.html"
+    },
+    {
+      "source": "/svyatoj-utes",
+      "destination": "/svyatoj-utes.html"
+    },
+    {
+      "source": "/my-piligrimy/",
+      "destination": "/my-piligrimy.html"
+    },
+    {
+      "source": "/my-piligrimy",
+      "destination": "/my-piligrimy.html"
+    },
+    {
       "source": "/vot-i-nastal-prekrasnyj-den/",
       "destination": "/vot-i-nastal-prekrasnyj-den.html"
     },
