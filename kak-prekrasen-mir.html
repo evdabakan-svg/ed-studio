@@ -41,6 +41,10 @@
 .sheet-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:2px;width:100%;align-items:stretch}
 .sheet-actions .btn:not(.hidden){box-sizing:border-box;min-width:0;width:100%;min-height:42px;height:42px;padding:8px 6px;display:flex!important;visibility:visible!important;opacity:1!important;align-items:center;justify-content:center;gap:5px;text-align:center;white-space:nowrap;font-size:10px;line-height:1.2}
 .sheet-actions .button-icon{width:13px;height:13px;flex:0 0 13px;margin-left:2px}
+.purchase-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;margin-top:auto;align-items:stretch}
+.purchase-option{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:0;min-height:42px;padding:8px 10px;border-radius:7px;background:var(--green);color:#fff;text-align:center;font-size:12px;font-weight:600;line-height:1.2;white-space:normal;overflow-wrap:anywhere;transition:background .18s,transform .18s}
+.purchase-option:hover{background:#355f49;transform:translateY(-1px)}
+@media(max-width:700px){.purchase-options{gap:6px}.purchase-option{min-height:42px;padding:7px 5px;font-size:10px;line-height:1.15}}
 #track-link{box-sizing:border-box;width:100%;min-height:42px;height:42px;padding:8px 6px;font-size:10px;line-height:1.2}
 }</style>
 </head>
@@ -58,7 +62,10 @@
 </section>
 <section class="section" id="lyrics"><div class="section-head"><h2>Текст песни</h2><h2 id="lyrics-print-title" class="print-only-title">Как прекрасен мир</h2><div class="lyrics-heading-actions"><button class="copy-lyrics print-lyrics" id="print-lyrics" type="button">Распечатать</button><button class="copy-lyrics" id="copy-lyrics" type="button">Копировать текст</button></div></div><div class="lyrics" id="lyrics-text">Текст песни будет добавлен.</div></section>
 <section class="section" id="materials"><div class="section-head"><h2>Материалы песни</h2></div><div class="materials">
-<article class="material"><span class="material-label">Аудио</span><h3 id="track-heading">Фонограмма</h3><p id="track-note"></p><a class="btn primary" id="track-link" href="mailto:edvabakan@gmail.com?subject=Фонограмма%20песни">Купить фонограмму</a></article>
+<article class="material"><span class="material-label">Аудио</span><h3 id="track-heading">Фонограмма</h3><p id="track-note"></p><div class="purchase-options" aria-label="Выберите страну для покупки фонограммы">
+<a class="purchase-option" href="https://app.lava.top/products/fdf64541-32ec-4564-9108-c92a48431f78?currency=RUB" target="_blank" rel="noopener noreferrer">Купить из России</a>
+<a class="purchase-option" href="https://app.lava.top/products/fdf64541-32ec-4564-9108-c92a48431f78?currency=USD" target="_blank" rel="noopener noreferrer">Из другой страны</a>
+</div></article>
 <article class="material" id="sheet-card"><span class="material-label">Файл</span><h3>Ноты песни</h3><p id="sheet-note"></p><div class="sheet-actions"><a class="btn" id="sheet-open-link" href="#" target="_blank" rel="noopener">Открыть ноты <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M7 4h9v9"/></svg></a><a class="btn" id="sheet-link" href="#" download>Скачать ноты <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v12M5 10l5 5 5-5M4 17h12"/></svg></a></div></article>
 </div></section>
 <section class="section" id="releases"><div class="section-head"><h2>Слушать песню</h2></div><div class="audio-player" aria-label="Аудиоплеер песни"><audio id="song-audio" preload="metadata"><source src="https://raw.githubusercontent.com/evdabakan-svg/ed-studio/main/audio/%D0%9C%D0%B0%D0%BC%D0%B0.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio><div class="audio-ui"><button class="audio-play" id="audio-play" type="button" aria-label="Воспроизвести"><svg id="audio-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><div class="audio-meta"><div class="audio-topline"><span class="audio-caption" id="audio-caption">Как прекрасен мир</span><span class="audio-time" id="audio-time">0:00 / 0:00</span></div><input class="audio-progress" id="audio-progress" type="range" min="0" max="1000" value="0" aria-label="Позиция воспроизведения"></div></div></div><div class="platforms">
