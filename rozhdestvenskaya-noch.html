@@ -48,7 +48,33 @@
 .purchase-option:hover{background:#355f49;transform:translateY(-1px)}
 @media(max-width:700px){.purchase-options{gap:6px}.purchase-option{min-height:42px;padding:7px 5px;font-size:10px;line-height:1.15}}
 #track-link{box-sizing:border-box;width:100%;min-height:42px;height:42px;padding:8px 6px;font-size:10px;line-height:1.2}
-}</style>
+}
+/* Единый блок покупки фонограммы — в стиле карточек материалов ED studio */
+#track-card{box-sizing:border-box;min-width:0;min-height:0;padding:20px;background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start}
+#track-card .material-label{font-size:10px;letter-spacing:1.2px;color:var(--green);text-transform:uppercase}
+#track-card h3{font:normal 22px var(--serif);margin:9px 0 14px;color:var(--ink)}
+#track-card #track-note{font-size:12px;color:var(--muted);margin:0 0 12px}
+#track-card .purchase-price{font:600 12px/1.4 Arial,Helvetica,sans-serif;color:#55584f;margin:0 0 12px}
+#track-card .purchase-options{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;min-width:0;margin-top:auto;align-items:stretch}
+#track-card .purchase-option{box-sizing:border-box;display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;min-width:0;min-height:54px;padding:8px 5px;border:1px solid var(--green);border-radius:8px;background:var(--green);color:#fff!important;text-align:center;text-decoration:none!important;white-space:nowrap;line-height:1.2;transition:background .18s,border-color .18s,transform .18s}
+#track-card .purchase-option:hover{background:#1d382b;border-color:#1d382b;transform:translateY(-1px)}
+#track-card .purchase-label{font-size:11px;font-weight:600;white-space:nowrap}
+#track-card .purchase-amount{font-size:12px;font-weight:700;white-space:nowrap}
+@media(max-width:700px){
+ #track-card{padding:17px;min-height:0}
+ #track-card h3{font-size:20px;margin:8px 0 10px}
+ #track-card .purchase-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ #track-card .purchase-option{min-height:52px;padding:7px 3px}
+ #track-card .purchase-label{font-size:10px}
+ #track-card .purchase-amount{font-size:11px}
+}
+@media(max-width:360px){
+ #track-card{padding:13px 11px}
+ #track-card .purchase-options{gap:5px}
+ #track-card .purchase-label{font-size:9px}
+ #track-card .purchase-amount{font-size:10px}
+}
+</style>
 </head>
 <body>
 <div class="topline"></div>
@@ -64,10 +90,11 @@
 </section>
 <section class="section" id="lyrics"><div class="section-head"><h2>Текст песни</h2><h2 id="lyrics-print-title" class="print-only-title">Рождественская ночь</h2><div class="lyrics-heading-actions"><button class="copy-lyrics print-lyrics" id="print-lyrics" type="button">Распечатать</button><button class="copy-lyrics" id="copy-lyrics" type="button">Копировать текст</button></div></div><div class="lyrics" id="lyrics-text">Текст песни будет добавлен.</div></section>
 <section class="section" id="materials"><div class="section-head"><h2>Материалы песни</h2></div><div class="materials">
-<article class="material" id="track-card"><span class="material-label">Аудио</span><h3 id="track-heading">Фонограмма</h3><p id="track-note"></p>
-<p class="purchase-price" style="margin:0 0 14px;color:#55584f;font-size:13px;font-weight:600;line-height:1.4">Стоимость: 3 900 руб. / 50 $</p><div class="purchase-options" aria-label="Выберите страну для покупки фонограммы">
-<a class="purchase-option" style="box-sizing:border-box;display:flex!important;align-items:center;justify-content:center;min-width:0;min-height:48px;padding:9px 10px;border:0;border-radius:7px;background:#47765a;color:#fff!important;text-align:center;font-size:12px;font-weight:700;line-height:1.3;text-decoration:none!important" href="https://app.lava.top/products/89de1b7a-902c-46d7-a490-c8a4cff38794/9e94ba67-9c32-43c6-b8d1-09edfcb1ec40?currency=RUB" target="_blank" rel="noopener noreferrer"><span>Купить из России<br><strong>3 900 руб.</strong></span></a>
-<a class="purchase-option" style="box-sizing:border-box;display:flex!important;align-items:center;justify-content:center;min-width:0;min-height:48px;padding:9px 10px;border:0;border-radius:7px;background:#47765a;color:#fff!important;text-align:center;font-size:12px;font-weight:700;line-height:1.3;text-decoration:none!important" href="https://app.lava.top/products/89de1b7a-902c-46d7-a490-c8a4cff38794/9e94ba67-9c32-43c6-b8d1-09edfcb1ec40?currency=USD" target="_blank" rel="noopener noreferrer"><span>Из другой страны<br><strong>50 $</strong></span></a>
+<article class="material" id="track-card"><span class="material-label">Аудио</span><h3 id="track-heading">Купить фонограмму</h3><p id="track-note"></p>
+<p class="purchase-price">Стоимость: 3 900 руб. / 50 $</p>
+<div class="purchase-options" aria-label="Выберите страну для покупки фонограммы">
+<a class="purchase-option" href="https://app.lava.top/products/89de1b7a-902c-46d7-a490-c8a4cff38794/9e94ba67-9c32-43c6-b8d1-09edfcb1ec40?currency=RUB" target="_blank" rel="noopener noreferrer"><span class="purchase-label">Купить из России</span><strong class="purchase-amount">3 900 руб.</strong></a>
+<a class="purchase-option" href="https://app.lava.top/products/89de1b7a-902c-46d7-a490-c8a4cff38794/9e94ba67-9c32-43c6-b8d1-09edfcb1ec40?currency=USD" target="_blank" rel="noopener noreferrer"><span class="purchase-label">Из другой страны</span><strong class="purchase-amount">50 $</strong></a>
 </div></article>
 <article class="material" id="sheet-card"><span class="material-label">Файл</span><h3>Ноты песни</h3><p id="sheet-note"></p><div class="sheet-actions"><a class="btn" id="sheet-open-link" href="#" target="_blank" rel="noopener">Открыть ноты <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M7 4h9v9"/></svg></a><a class="btn" id="sheet-link" href="#" download>Скачать ноты <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v12M5 10l5 5 5-5M4 17h12"/></svg></a></div></article>
 </div></section>
