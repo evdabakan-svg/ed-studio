@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/ya-idu-za-zvezdoj-vifleemskoyu/",
+      "destination": "/ya-idu-za-zvezdoj.html"
+    },
+    {
+      "source": "/ya-idu-za-zvezdoj-vifleemskoyu",
+      "destination": "/ya-idu-za-zvezdoj.html"
+    },
+    {
       "source": "/schaste/",
       "destination": "/schaste.html"
     },
