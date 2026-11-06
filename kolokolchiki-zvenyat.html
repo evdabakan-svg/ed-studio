@@ -185,7 +185,6 @@
   Object.entries(links).forEach(([id, url]) => { if (url) byId(id).href = url; else byId(id).classList.add('hidden'); });
   const other = byId('other-toggle'); other.href = 'https://links.edstudio.site/kolokolchiki-zvenyat'; other.classList.remove('hidden');
   byId('buy-track').href = '#materials';
-  byId('track-link').href = 'mailto:edvabakan@gmail.com?subject=Фонограмма%20песни%20Колокольчики%20звенят';
 
   // Ширина кнопки «Ноты» точно равна фактической ширине кнопки «Фонограмма».
   const matchButtonWidths = () => {
