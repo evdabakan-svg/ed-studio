@@ -50,30 +50,32 @@
 }
 .note-preview{border:1px solid var(--line);background:var(--white);padding:14px}.note-preview p{margin:4px 0;color:var(--muted);font-size:13px}.note-preview iframe{display:block;width:100%;height:min(78vh,900px);border:0;background:#fff}
  .amazon-logo{display:block;width:34px;max-width:100%;height:38px;object-fit:contain;object-position:center;flex:0 0 34px}\n
-/* Единый блок покупки фонограммы — в стиле карточек материалов ED studio */
-#track-card{box-sizing:border-box;min-width:0;min-height:0;padding:20px;background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start}
+/* Единый размер карточек материалов — как на странице «Почему в этот день столько света?» */
+.materials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch}
+.material{box-sizing:border-box;min-width:0;min-height:148px;padding:20px}
+#track-card{min-height:148px;padding:20px}
 #track-card .material-label{font-size:10px;letter-spacing:1.2px;color:var(--green);text-transform:uppercase}
 #track-card h3{font:normal 22px var(--serif);margin:9px 0 14px;color:var(--ink)}
 #track-card #track-note{font-size:12px;color:var(--muted);margin:0 0 12px}
-#track-card .purchase-price{font:600 12px/1.4 Arial,Helvetica,sans-serif;color:#55584f;margin:0 0 12px}
+#track-card .purchase-price{font:600 13px/1.4 Arial,Helvetica,sans-serif;color:#55584f;margin:0 0 14px}
 #track-card .purchase-options{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;min-width:0;margin-top:auto;align-items:stretch}
-#track-card .purchase-option{box-sizing:border-box;display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;min-width:0;min-height:54px;padding:8px 5px;border:1px solid var(--green);border-radius:8px;background:var(--green);color:#fff!important;text-align:center;text-decoration:none!important;white-space:nowrap;line-height:1.2;transition:background .18s,border-color .18s,transform .18s}
-#track-card .purchase-option:hover{background:#1d382b;border-color:#1d382b;transform:translateY(-1px)}
-#track-card .purchase-label{font-size:11px;font-weight:600;white-space:nowrap}
-#track-card .purchase-amount{font-size:12px;font-weight:700;white-space:nowrap}
+#track-card .purchase-option{box-sizing:border-box;display:flex!important;align-items:center;justify-content:center;width:100%;min-width:0;min-height:42px;padding:8px 9px;border:0;border-radius:7px;background:var(--green);color:#fff!important;text-align:center;text-decoration:none!important;font-size:12px;font-weight:700;line-height:1.2;white-space:nowrap;transition:background .18s,transform .18s}
+#track-card .purchase-option:hover{background:#355f49;transform:translateY(-1px)}
+#track-card .purchase-label{font-size:12px;font-weight:700;white-space:nowrap}
 @media(max-width:700px){
- #track-card{padding:17px;min-height:0}
- #track-card h3{font-size:20px;margin:8px 0 10px}
- #track-card .purchase-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
- #track-card .purchase-option{min-height:52px;padding:7px 3px}
- #track-card .purchase-label{font-size:10px}
- #track-card .purchase-amount{font-size:11px}
+ .materials{grid-template-columns:1fr;gap:8px}
+ .material{min-height:160px;padding:13px 11px}
+ #track-card{min-height:160px;padding:13px 11px}
+ #track-card h3{font-size:18px;line-height:1.15;margin:8px 0 10px}
+ #track-card .purchase-price{font-size:11px;margin:0 0 12px}
+ #track-card .purchase-options{gap:6px}
+ #track-card .purchase-option{min-height:38px;padding:7px 5px;font-size:10px;white-space:normal}
+ #track-card .purchase-label{font-size:10px;white-space:normal}
 }
 @media(max-width:360px){
- #track-card{padding:13px 11px}
  #track-card .purchase-options{gap:5px}
+ #track-card .purchase-option{padding:7px 3px;font-size:9px}
  #track-card .purchase-label{font-size:9px}
- #track-card .purchase-amount{font-size:10px}
 }
 </style>
 </head>
@@ -94,8 +96,8 @@
 <article class="material" id="track-card"><span class="material-label">Аудио</span><h3 id="track-heading">Купить фонограмму</h3><p id="track-note"></p>
 <p class="purchase-price">Стоимость: 3 900 руб. / 50 $</p>
 <div class="purchase-options" aria-label="Выберите страну для покупки фонограммы">
-<a class="purchase-option" href="https://app.lava.top/products/c0befa9e-e8d9-4248-a146-2ecc471db10c/52785e31-507c-456a-a837-0682d2cc2eeb?currency=RUB" target="_blank" rel="noopener noreferrer"><span class="purchase-label">Купить из России</span><strong class="purchase-amount">3 900 руб.</strong></a>
-<a class="purchase-option" href="https://app.lava.top/products/c0befa9e-e8d9-4248-a146-2ecc471db10c/52785e31-507c-456a-a837-0682d2cc2eeb?currency=USD" target="_blank" rel="noopener noreferrer"><span class="purchase-label">Из другой страны</span><strong class="purchase-amount">50 $</strong></a>
+<a class="purchase-option" href="https://app.lava.top/products/c0befa9e-e8d9-4248-a146-2ecc471db10c/52785e31-507c-456a-a837-0682d2cc2eeb?currency=RUB" target="_blank" rel="noopener noreferrer"><span class="purchase-label">Купить из России</span></a>
+<a class="purchase-option" href="https://app.lava.top/products/c0befa9e-e8d9-4248-a146-2ecc471db10c/52785e31-507c-456a-a837-0682d2cc2eeb?currency=USD" target="_blank" rel="noopener noreferrer"><span class="purchase-label">Из другой страны</span></a>
 </div></article>
 <article class="material" id="sheet-card"><span class="material-label">Файл</span><h3>Ноты песни</h3><p id="sheet-note"></p><div class="sheet-actions"><a class="btn" id="sheet-open-link" href="#" target="_blank" rel="noopener">Открыть ноты <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M7 4h9v9"/></svg></a><a class="btn" id="sheet-link" href="#" download>Скачать ноты <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v12M5 10l5 5 5-5M4 17h12"/></svg></a></div></article>
 </div></section>
