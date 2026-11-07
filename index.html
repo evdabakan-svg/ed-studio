@@ -151,6 +151,9 @@ const songPages=[
  ['я иду за звездой вифлеемскою','ya-idu-za-zvezdoj.html'],
  ['как мы в детстве с тобой играли','pesnya-dlya-sestry.html'],
  ['счастье иисус ты источник счастья','schaste.html'],
+ ['счастлив я у ног иисуса','schastliv-ya-u-nog-iisusa.html'],
+ ['не упусти счастье','ne-upusti-schaste.html'],
+ ['вот и настал прекрасный день','vot-i-nastal-prekrasnyj-den.html'],
  ['жемчужина','zhemchuzhina.html'],
  ['святой утес','svyatoj-utes.html'],
  ['мы пилигримы','my-piligrimy.html']
@@ -246,9 +249,10 @@ function renderCatalog(){
   const numberNode=document.createElement('div');
   numberNode.className='song-list-number';
   numberNode.textContent=String(19-itemIndex);
-  const titleNode=document.createElement('div');
+  const titleNode=document.createElement('a');
   titleNode.className='song-list-title';
   titleNode.textContent=title;
+  if(page){titleNode.href=page;titleNode.setAttribute('aria-label','Открыть песню «'+title+'»')}
   const artistNode=document.createElement('div');
   artistNode.className='song-list-artist';
   artistNode.textContent=artist;
@@ -261,7 +265,7 @@ function renderCatalog(){
   actions.appendChild(makeSongAction('Слушать ↗︎',page,'releases','song-list-link'));
   const coverWrap=document.createElement('div');
   coverWrap.className='song-list-cover-wrap';
-  coverWrap.append(thumb,numberNode);
+  if(page){const coverLink=document.createElement('a');coverLink.className='song-list-cover-link';coverLink.href=page;coverLink.setAttribute('aria-label','Открыть песню «'+title+'»');coverLink.appendChild(thumb);coverWrap.append(coverLink,numberNode)}else coverWrap.append(thumb,numberNode);
   row.append(coverWrap,info,actions);
   list.appendChild(row);
  });
