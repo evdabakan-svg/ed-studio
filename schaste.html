@@ -71,7 +71,11 @@ footer .legal-document-links a{color:inherit!important;text-decoration:underline
 footer .legal-document-links a:hover{color:var(--green)!important}
 @media(max-width:700px){footer .legal-document-links{justify-content:flex-start;gap:7px 16px;padding:12px 0 20px;font-size:10px}}
 </style>
-</head>
+<style id="full-cover-no-crop">
+/* Показываем обложки целиком, сохраняя исходное соотношение сторон */
+.cover-frame{background:#e6e5dc!important}
+.cover{width:100%!important;height:100%!important;aspect-ratio:1!important;object-fit:contain!important;object-position:center!important;background:#e6e5dc!important}
+</style></head>
 <body>
 <div class="topline"></div>
 <header><div class="wrap nav"><a class="brand" href="/">ED <span>studio</span></a><nav class="navlinks"><a href="/#catalog">Каталог песен</a><a href="/#materials">Фонограммы и ноты</a><a href="/#about">О студии</a><a href="/#contacts">Контакты</a></nav></div></header>
