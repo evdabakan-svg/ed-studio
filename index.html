@@ -109,7 +109,10 @@
 
  .song-cover-link{grid-column:1;grid-row:1;display:block;min-width:0;align-self:stretch}
 </style>
-</head>
+<style id="full-album-cover-no-crop">
+/* Альбомные обложки в каталоге и списках не обрезаются */
+.song-cover,.song-small-cover,.song-list-thumb{background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important;background-color:#e6e5dc!important}
+</style></head>
 <body>
 <div class="topline"></div>
 <header><div class="wrap nav"><a class="brand" href="#">ED <span>studio</span></a><nav class="navlinks" aria-label="Основная навигация"><a href="#catalog">Каталог песен</a><a href="#materials">Фонограммы и ноты</a><a href="#about">О студии</a><a href="#contact">Контакты</a></nav><a class="nav-cta" href="#contact">Связаться ↗︎</a></div></header>
