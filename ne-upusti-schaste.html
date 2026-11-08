@@ -59,7 +59,10 @@
 С души тотчас исчезнет тяжкий гнёт
 Когда познаешь Иисуса милость</div></section>
 <section class="section" id="materials"><div class="section-head"><h2>Материалы песни</h2></div><div class="materials">
-<article class="material" id="track-card"><span class="material-label">Аудио</span><h3 id="track-heading">Фонограмма</h3><p id="track-note">Фонограмма песни «Не упусти счастье» доступна для заказа.</p><a class="btn primary" id="track-link" href="mailto:edvabakan@gmail.com?subject=Фонограмма%20песни%20Не%20упусти%20счастье">Купить фонограмму</a></article>
+<article class="material" id="track-card"><span class="material-label">Аудио</span><h3 id="track-heading">Фонограмма</h3><p id="track-note">Фонограмма песни «Не упусти счастье» доступна для заказа.</p><div class="purchase-options" aria-label="Выберите страну для покупки фонограммы">
+<a class="purchase-option" href="https://app.lava.top/products/82c54a4d-f9ca-4023-9529-98db8d0d8777/087952ab-8bce-4a3a-a113-1e45d2cf00f1?currency=RUB" target="_blank" rel="noopener noreferrer"><span class="purchase-label">Купить из России</span></a>
+<a class="purchase-option" href="https://app.lava.top/products/82c54a4d-f9ca-4023-9529-98db8d0d8777/087952ab-8bce-4a3a-a113-1e45d2cf00f1?currency=USD" target="_blank" rel="noopener noreferrer"><span class="purchase-label">Из другой страны</span></a>
+</div><a class="btn primary hidden" id="track-link" href="#" aria-hidden="true" tabindex="-1">Купить фонограмму</a></article>
 <article class="material" id="sheet-card"><span class="material-label">Файл</span><h3>Ноты песни</h3><p id="sheet-note">Ноты песни «Не упусти счастье» в формате PDF.</p><div class="sheet-actions"><a class="btn" id="sheet-open-link" href="/notes/ne-upusti-schaste.pdf" target="_blank" rel="noopener">Открыть ноты <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M7 4h9v9"/></svg></a><a class="btn" id="sheet-link" href="/notes/ne-upusti-schaste.pdf" download>Скачать ноты <svg class="button-icon arrow-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v12M5 10l5 5 5-5M4 17h12"/></svg></a></div></article>
 </div></section>
 <section class="section" id="releases"><h2>Слушать песню</h2><div class="platforms"><div class="platform disabled"><img src="https://logo-teka.com/wp-content/uploads/2025/07/spotify-sign-logo.svg" alt="">Spotify</div><div class="platform disabled"><img src="https://logo-teka.com/wp-content/uploads/2025/07/apple-music-sign-logo.svg" alt="">Apple Music</div><div class="platform disabled"><img src="https://logo-teka.com/wp-content/uploads/2025/07/yandex-music-sign-logo.svg" alt="">Яндекс Музыка</div><div class="platform disabled"><img src="https://logo-teka.com/wp-content/uploads/2025/08/vk-music-sign-logo.svg" alt="">VK Музыка</div><div class="platform disabled"><img src="https://logo-teka.com/wp-content/uploads/2026/05/youtube-music-icon-logo.svg" alt="">YouTube Music</div><div class="platform disabled amazon"><img src="https://logo-teka.com/wp-content/uploads/2026/05/amazon-music-vertical-logo.svg" alt="">Amazon Music</div></div><a class="other" href="https://links.edstudio.site/ne-upusti-schaste" target="_blank" rel="noopener">Другие площадки ↗</a></section></main><footer class="foot"><div class="wrap">ED studio · Музыкальная студия Евгения Дмитриева</div></footer><script>document.getElementById("copyLyrics").addEventListener("click",async function(){const t=document.getElementById("lyricsText").innerText;try{await navigator.clipboard.writeText(t);this.textContent="Скопировано ✓"}catch(e){this.textContent="Не удалось скопировать"}setTimeout(()=>this.textContent="Копировать текст",1800)});
@@ -100,5 +103,27 @@ window.addEventListener('resize',matchHeroNotesWidth);
  .materials>.material .purchase-option,.materials>.material .sheet-actions .btn:not(.hidden),.materials>.material #track-link:not(.hidden){min-height:38px!important;padding:7px 5px!important;font-size:10px!important}
 }
 @media(max-width:360px){.materials>.material .purchase-option,.materials>.material .sheet-actions .btn:not(.hidden),.materials>.material #track-link:not(.hidden){padding:7px 3px!important;font-size:9px!important}}
+</style>
+<style id="materials-reference-override">
+#materials .materials{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;align-items:stretch!important}
+#materials .material{box-sizing:border-box!important;border:1px solid var(--line)!important;background:var(--white)!important;padding:20px!important;min-height:148px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important}
+#materials .material-label{font-size:10px!important;letter-spacing:1.2px!important;color:var(--green)!important;text-transform:uppercase!important}
+#materials .material h3{font:normal 22px var(--serif)!important;margin:9px 0 14px!important}
+#materials .material p{font-size:12px!important;color:var(--muted)!important;margin:0 0 18px!important}
+#materials .material .btn{margin-top:auto!important;min-height:38px!important;padding:8px 12px!important}
+#materials .purchase-options,#materials .sheet-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:100%!important;min-width:0!important;margin-top:auto!important;align-items:stretch!important}
+#materials .purchase-option,#materials #track-link:not(.hidden){box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;min-height:40px!important;height:auto!important;margin:0!important;padding:8px 9px!important;border:1px solid var(--ink)!important;border-radius:0!important;background:var(--ink)!important;color:var(--white)!important;text-decoration:none!important;text-align:center!important;font:normal 11px/1.2 Arial,Helvetica,sans-serif!important;white-space:normal!important;overflow-wrap:anywhere!important}
+#materials .sheet-actions .btn:not(.hidden){box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;min-height:40px!important;height:auto!important;margin:0!important;padding:8px 9px!important;border:1px solid var(--ink)!important;border-radius:0!important;background:transparent!important;color:var(--ink)!important;text-decoration:none!important;text-align:center!important;font:normal 11px/1.2 Arial,Helvetica,sans-serif!important;white-space:normal!important;overflow-wrap:anywhere!important}
+#materials .purchase-option:hover,#materials #track-link:not(.hidden):hover,#materials .sheet-actions .btn:not(.hidden):hover{background:var(--green)!important;border-color:var(--green)!important;color:#fff!important}
+#materials .purchase-price{display:none!important}
+@media(max-width:700px){
+#materials .materials{grid-template-columns:1fr!important;gap:8px!important}
+#materials .material{min-width:0!important;max-width:none!important;padding:13px 11px!important;min-height:160px!important}
+#materials .material h3{font-size:18px!important;line-height:1.15!important;margin:8px 0 10px!important}
+#materials .material p{font-size:11px!important;line-height:1.35!important;margin:0 0 12px!important}
+#materials .purchase-options,#materials .sheet-actions{gap:6px!important}
+#materials .purchase-option,#materials .sheet-actions .btn:not(.hidden),#materials #track-link:not(.hidden){min-height:38px!important;padding:7px 5px!important;font-size:10px!important}
+}
+@media(max-width:360px){#materials .purchase-option,#materials .sheet-actions .btn:not(.hidden),#materials #track-link:not(.hidden){padding:7px 3px!important;font-size:9px!important}}
 </style>
 </body></html>
