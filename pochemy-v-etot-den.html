@@ -100,7 +100,7 @@
 /* Показываем обложки целиком, сохраняя исходное соотношение сторон */
 .cover-frame{background:#e6e5dc!important}
 .cover{width:100%!important;height:100%!important;aspect-ratio:1!important;object-fit:contain!important;object-position:center!important;background:#e6e5dc!important}
-</style></head>
+</style><style id="ed-legal-unified">footer .legal-document-links{box-sizing:border-box!important;display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:12px 24px!important;width:min(1060px,calc(100% - 40px))!important;margin:14px auto 0!important;padding:16px 0 24px!important;border-top:1px solid #d8d8cf!important;font:12px/1.6 Arial,Helvetica,sans-serif!important}footer .legal-document-links a{color:inherit!important;text-decoration:underline!important;text-underline-offset:3px!important}@media(max-width:700px){footer .legal-document-links{justify-content:flex-start!important;font-size:11px!important}}</style></head>
 <body>
 <div class="topline"></div>
 <header><div class="wrap nav"><a class="brand" href="/">ED <span>studio</span></a><nav class="navlinks"><a href="/#catalog">Каталог песен</a><a href="/#materials">Фонограммы и ноты</a><a href="/#about">О студии</a><a href="/#contacts">Контакты</a></nav></div></header>
@@ -129,7 +129,7 @@
 <a class="platform platform-vk" id="vk" href="#" target="_blank" rel="noopener" aria-label="Слушать в VK Музыке"><img src="https://logo-teka.com/wp-content/uploads/2025/08/vk-music-sign-logo.svg" alt="" aria-hidden="true"><span>VK Музыка</span></a>
 <a class="platform" id="other-toggle" href="https://links.edstudio.site/mama" target="_blank" rel="noopener">Другие площадки</a></div><div class="other-list" id="other-list"></div></section>
 </main>
-<footer><div class="wrap footer-inner"><span>ED studio · Музыкальная студия Евгения Дмитриева</span><a class="footer-home" href="/">На главную <svg class="footer-home-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5"/></svg></a></div><div class="wrap legal-document-links"><a href="/documents/oferta.docx" rel="nofollow" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Публичная оферта</a><a href="/documents/privacy.docx" rel="nofollow" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Политика возврата и обработки персональных данных</a></div></footer>
+<footer><div class="wrap footer-inner"><span>ED studio · Музыкальная студия Евгения Дмитриева</span><a class="footer-home" href="/">На главную <svg class="footer-home-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5"/></svg></a></div><div class="wrap legal-document-links"><a href="/documents/oferta.docx" rel="nofollow">Публичная оферта</a><a href="/documents/privacy.docx" rel="nofollow">Политика возврата и обработки персональных данных</a></div></footer>
 <script>
 (() => {
   const songTitle = 'Почему в этот день столько света?';
@@ -166,7 +166,7 @@
   byId('sheet-link').href = sheetUrl;
   byId('sheet-link').download = 'Почему в этот день столько света — ноты.pdf';
   byId('top-sheet-link').href = '#materials';
-  byId('sheet-note').textContent = 'PDF-файл можно будет открыть или скачать.';
+  byId('sheet-note').textContent = 'PDF-файл можно открыть или скачать.';
   // Кнопки нот всегда остаются видимыми: HEAD-запрос может блокироваться хостингом,
   // даже когда сам PDF доступен для обычного открытия и скачивания.
   byId('sheet-open-link').classList.remove('hidden');
